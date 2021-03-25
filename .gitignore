@@ -1,0 +1,15 @@
+.idea/*
+*.Ds_Store
+node_modules/*
+dist/*
+/.vscode/
+.node-version
+deploy-newhuan.sh
+yarn-error.log
+proxy.conf.json
+**/src/environment.js
+
+# vim cache files
+*.swp
+*.swo
+**/cdn/cdnConfig.js

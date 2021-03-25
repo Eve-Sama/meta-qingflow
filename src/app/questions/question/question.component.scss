@@ -1,0 +1,28 @@
+.question-container {
+  display: flex;
+  justify-content: space-around;
+  background: #ececec;
+  .left,
+  .right {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 150px;
+    background: gray;
+    user-select: none;
+    font-size: 26px;
+    
+  }
+  .left {
+    left: 0;
+  }
+  .right {
+    right: 0;
+  }
+  .content {
+    width: 1280px;
+    padding: 0px 30px;
+  }
+}

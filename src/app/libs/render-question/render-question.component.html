@@ -1,0 +1,13 @@
+<div nz-row>
+  <div nz-col [nzSpan]="24">
+    <nz-card [nzTitle]="queTitle">
+      <markdown [src]="mdSrc"></markdown>
+      <nz-divider nzDashed [nzText]="textTpl">
+        <ng-template #textTpl><i nz-icon nzType="plus"></i> 以下为作答区域</ng-template>
+      </nz-divider>
+      <div class="answer">
+        <ng-content></ng-content>
+      </div>
+    </nz-card>
+  </div>
+</div>
