@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -12,6 +13,7 @@ import { RenderQuestionComponent } from './render-question.component';
   imports: [
     CommonModule,
     NzCardModule,
+    NzButtonModule,
     NzSwitchModule,
     NzGridModule,
     NzDividerModule,

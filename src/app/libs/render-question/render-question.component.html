@@ -1,12 +1,19 @@
 <div nz-row>
   <div nz-col [nzSpan]="24">
     <nz-card [nzTitle]="queTitle">
-      <markdown [src]="mdSrc"></markdown>
-      <nz-divider nzDashed [nzText]="textTpl">
-        <ng-template #textTpl><i nz-icon nzType="plus"></i> 以下为作答区域</ng-template>
-      </nz-divider>
-      <div class="answer">
-        <ng-content></ng-content>
+      <div class="question-container">
+        <markdown [src]="mdSrc"></markdown>
+        <nz-divider nzText="作答区域"></nz-divider>
+        <div class="border">
+          <ng-content></ng-content>
+        </div>
+        <button nz-button nzType="dashed" (click)="showAnalyse = !showAnalyse">{{showAnalyse ? '隐藏' : '查看'}}题解</button>
+        <ng-container *ngIf="showAnalyse">
+          <nz-divider nzText="题解"></nz-divider>
+          <div class="border">
+            <markdown [src]="analyseMdSrc"></markdown>
+          </div>
+        </ng-container>
       </div>
     </nz-card>
   </div>

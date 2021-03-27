@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
-  page = ['01', '02', '03', '04', '05', '06'];
+  page = ['00', '01', '02', '03', '04', '05', '06'];
 
   previous(): void {
     const index = this.getPageIndex('previous');

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Question00Component } from './question-00/question-00.component';
 import { Question01Component } from './question-01/question-01.component';
 import { Question02Component } from './question-02/question-02.component';
 import { Question03Component } from './question-03/question-03.component';
@@ -10,8 +11,12 @@ import { Question06Component } from './question-06/question-06.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '01',
+    redirectTo: '00',
     pathMatch: 'full'
+  },
+  {
+    path: '00',
+    component: Question00Component
   },
   {
     path: '01',

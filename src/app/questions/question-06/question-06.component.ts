@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-question-06',
-  templateUrl: './question-06.component.html',
-  styleUrls: ['./question-06.component.scss']
+  templateUrl: './question-06.component.html'
 })
 export class Question06Component {
   // role: 1为管理员 2为用户

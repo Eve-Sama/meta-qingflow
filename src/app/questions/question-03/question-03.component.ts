@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-question-03',
-  templateUrl: './question-03.component.html',
-  styleUrls: ['./question-03.component.scss']
+  templateUrl: './question-03.component.html'
 })
 export class Question03Component implements OnInit {
   users = [

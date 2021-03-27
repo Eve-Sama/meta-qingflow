@@ -3,8 +3,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-question-02',
-  templateUrl: './question-02.component.html',
-  styleUrls: ['./question-02.component.scss']
+  templateUrl: './question-02.component.html'
 })
 export class Question02Component {
   openModal(): void {

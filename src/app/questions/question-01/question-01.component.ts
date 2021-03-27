@@ -3,8 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-question-01',
-  templateUrl: './question-01.component.html',
-  styleUrls: ['./question-01.component.scss']
+  templateUrl: './question-01.component.html'
 })
 export class Question01Component {
   isCn = true;
