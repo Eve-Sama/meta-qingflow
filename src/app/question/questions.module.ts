@@ -14,18 +14,20 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { QuestionsRoutingModule } from './questions-routing.module';
-import { QuestionComponent } from './question/question.component';
-import { RenderQuestionModule } from '../libs/render-question';
-import { Question00Component } from './question-00/question-00.component';
-import { Question01Component } from './question-01/question-01.component';
-import { Question02Component } from './question-02/question-02.component';
-import { Question03Component } from './question-03/question-03.component';
-import { Question04Component } from './question-04/question-04.component';
-import { Question05Component } from './question-05/question-05.component';
-import { Question06Component } from './question-06/question-06.component';
-import CN from './i18n/cn';
-import EN from './i18n/en';
+import { QuestionComponent } from './question-render/question.component';
+import { Question00Component } from './question-list/question-00/question-00.component';
+import { Question01Component } from './question-list/question-01/question-01.component';
+import { Question02Component } from './question-list/question-02/question-02.component';
+import { Question03Component } from './question-list/question-03/question-03.component';
+import { Question04Component } from './question-list/question-04/question-04.component';
+import { Question05Component } from './question-list/question-05/question-05.component';
+import { Question06Component } from './question-list/question-06/question-06.component';
+import { MarkdownModule } from 'ngx-markdown';
+import CN from './config/i18n/cn';
+import EN from './config/i18n/en';
 
 const QUESTION = [
   QuestionComponent,
@@ -65,7 +67,16 @@ export class CustomTranslateLoader implements TranslateLoader {
   imports: [
     QuestionsRoutingModule,
     CommonModule,
+    RouterModule,
     FormsModule,
+    NzCardModule,
+    NzButtonModule,
+    NzSwitchModule,
+    NzGridModule,
+    NzDividerModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient
+    }),
     TranslateModule.forRoot({
       defaultLanguage: 'cn',
       loader: {
@@ -73,7 +84,6 @@ export class CustomTranslateLoader implements TranslateLoader {
         useClass: CustomTranslateLoader
       }
     }),
-    RenderQuestionModule,
     ...ZORRO
   ],
   declarations: [...QUESTION]
