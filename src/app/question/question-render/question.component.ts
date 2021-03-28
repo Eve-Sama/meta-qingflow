@@ -11,7 +11,9 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   /** 题目序号 */
   index: string;
   /** 是否显示题解内容 */
-  showAnalyse = false;
+  showAnalyseContent = false;
+  /** 是否显示题解按钮 */
+  showAnalyseButton = false;
   firstRun = true;
   /** 有些题目是没有参考答案的, 则不显示答案区域 */
   showAnswer = true;
@@ -49,7 +51,8 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   }
 
   private generateComponent(): void {
-    const { question, answer } = getComponent(this.index);
+    const { question, answer, analyse } = getComponent(this.index);
+    this.showAnalyseButton = analyse;
     // 避免变更检查错误
     setTimeout(() => {
       this.generateQuestionComponent(question);
@@ -96,7 +99,7 @@ export class QuestionComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.showAnalyse = false;
+      this.showAnalyseContent = false;
       this.index = params.index;
       this.setMarkdown();
       if (!this.firstRun) {

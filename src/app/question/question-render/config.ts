@@ -15,44 +15,49 @@ import { Question06Component } from '../question-list/question-06/question-06.co
 
 export const page = ['00', '01', '02', '03', '04', '05', '06'];
 
-export function getComponent(index: string): { question: any; answer?: any } {
+export function getComponent(index: string): { question: any; answer?: any; analyse?: boolean } {
   switch (index) {
     case '00':
       return {
         question: Question00Component,
-        answer: Answer00Component
+        answer: Answer00Component,
+        analyse: true
       };
     case '01':
       return {
         question: Question01Component,
-        answer: Answer01Component
+        answer: Answer01Component,
+        analyse: true
       };
     case '02':
       return {
         question: Question02Component,
-        answer: Answer02Component
+        answer: Answer02Component,
+        analyse: true
       };
     case '03':
       return {
         question: Question03Component,
-        answer: Answer03Component
+        answer: Answer03Component,
+        analyse: true
       };
     case '04':
       return {
-        question: Question04Component
+        question: Question04Component,
+        analyse: true
       };
     case '05':
       return {
         question: Question05Component,
-        answer: Answer05Component
+        analyse: false
       };
     case '06':
       return {
         question: Question06Component,
-        answer: Answer06Component
+        answer: Answer06Component,
+        analyse: true
       };
     default:
       throw new Error('The method getComponent() can not find valid components');
   }
 }
-

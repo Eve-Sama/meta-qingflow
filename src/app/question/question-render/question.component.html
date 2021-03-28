@@ -18,8 +18,12 @@
             <div class="border">
               <ng-container #questionComponentRef></ng-container>
             </div>
-            <button nz-button nzType="dashed" (click)="showAnalyse = !showAnalyse">{{showAnalyse ? '隐藏' : '查看'}}题解</button>
-            <ng-container *ngIf="showAnalyse">
+            <button
+              *ngIf="showAnalyseButton"
+              nz-button
+              nzType="dashed"
+              (click)="showAnalyseContent = !showAnalyseContent">{{showAnalyse ? '隐藏' : '查看'}}题解</button>
+            <ng-container *ngIf="showAnalyseContent">
               <nz-divider nzText="题解"></nz-divider>
               <div class="border">
                 <markdown [src]="analyseMdSrc"></markdown>
