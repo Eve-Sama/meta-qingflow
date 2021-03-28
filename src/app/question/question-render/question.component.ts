@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { getComponent, page } from './config';
+import { getAnswerComponent, getQuestionComponent, page } from './config';
 
 @Component({
   selector: 'app-question',
@@ -17,7 +17,8 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   analyseMdSrc: string;
   page = page;
 
-  @ViewChild('componentViewContainer', { read: ViewContainerRef }) componentViewContainerRef: ViewContainerRef;
+  @ViewChild('questionComponentRef', { read: ViewContainerRef }) questionComponentRef: ViewContainerRef;
+  @ViewChild('answerComponentRef', { read: ViewContainerRef }) answerComponentRef: ViewContainerRef;
 
   // 切换题目
   jump(action: 'previous' | 'next'): void {
@@ -46,10 +47,23 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   }
 
   private generateComponent(): void {
-    const component = getComponent(this.index);
-    const componentFactory = this.componentFactoryResolve.resolveComponentFactory(component);
-    this.componentViewContainerRef.clear();
-    const componentRef = this.componentViewContainerRef.createComponent(componentFactory);
+    this.generateQuestionComponent();
+    this.generateAnswerComponent();
+  }
+
+  private generateQuestionComponent(): void {
+    const questionComponent = getQuestionComponent(this.index);
+    const componentFactory = this.componentFactoryResolve.resolveComponentFactory(questionComponent);
+    this.questionComponentRef.clear();
+    const componentRef = this.questionComponentRef.createComponent(componentFactory);
+    componentRef.changeDetectorRef.detectChanges();
+  }
+
+  private generateAnswerComponent(): void {
+    const answerComponent = getAnswerComponent(this.index);
+    const componentFactory = this.componentFactoryResolve.resolveComponentFactory(answerComponent);
+    this.answerComponentRef.clear();
+    const componentRef = this.answerComponentRef.createComponent(componentFactory);
     componentRef.changeDetectorRef.detectChanges();
   }
 

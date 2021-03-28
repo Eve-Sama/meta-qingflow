@@ -1,3 +1,4 @@
+import { Answer00Component } from '../answer-list/answer-00/answer-00.component';
 import { Question00Component } from '../question-list/question-00/question-00.component';
 import { Question01Component } from '../question-list/question-01/question-01.component';
 import { Question02Component } from '../question-list/question-02/question-02.component';
@@ -8,7 +9,7 @@ import { Question06Component } from '../question-list/question-06/question-06.co
 
 export const page = ['00', '01', '02', '03', '04', '05', '06'];
 
-export function getComponent(index: string): any {
+export function getQuestionComponent(index: string): any {
   switch (index) {
     case '00':
       return Question00Component;
@@ -24,6 +25,15 @@ export function getComponent(index: string): any {
       return Question05Component;
     case '06':
       return Question06Component;
+    default:
+      return Question00Component;
+  }
+}
+
+export function getAnswerComponent(index: string): any {
+  switch (index) {
+    case '00':
+      return Answer00Component;
     default:
       return Question00Component;
   }

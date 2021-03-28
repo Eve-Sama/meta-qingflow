@@ -28,6 +28,7 @@ import { Question06Component } from './question-list/question-06/question-06.com
 import { MarkdownModule } from 'ngx-markdown';
 import CN from './config/i18n/cn';
 import EN from './config/i18n/en';
+import { Answer00Component } from './answer-list/answer-00/answer-00.component';
 
 const QUESTION = [
   QuestionComponent,
@@ -38,6 +39,9 @@ const QUESTION = [
   Question04Component,
   Question05Component,
   Question06Component
+];
+const ANSWER = [
+  Answer00Component
 ];
 const ZORRO = [
   NzCardModule,
@@ -86,6 +90,6 @@ export class CustomTranslateLoader implements TranslateLoader {
     }),
     ...ZORRO
   ],
-  declarations: [...QUESTION]
+  declarations: [...QUESTION, ...ANSWER]
 })
 export class QuestionsModule {}

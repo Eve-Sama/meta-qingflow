@@ -5,12 +5,16 @@
   <div class="content">
     <div nz-row>
       <div nz-col [nzSpan]="24">
-        <nz-card [nzTitle]="'queTitle'">
+        <nz-card>
           <div class="question-container">
             <markdown [src]="questionMdSrc"></markdown>
+            <nz-divider nzText="预期表现"></nz-divider>
+            <div class="border">
+              <ng-container #answerComponentRef></ng-container>
+            </div>
             <nz-divider nzText="作答区域"></nz-divider>
             <div class="border">
-              <ng-container #componentViewContainer></ng-container>
+              <ng-container #questionComponentRef></ng-container>
             </div>
             <button nz-button nzType="dashed" (click)="showAnalyse = !showAnalyse">{{showAnalyse ? '隐藏' : '查看'}}题解</button>
             <ng-container *ngIf="showAnalyse">
