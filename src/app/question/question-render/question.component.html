@@ -8,10 +8,12 @@
         <nz-card>
           <div class="question-container">
             <markdown [src]="questionMdSrc"></markdown>
-            <nz-divider nzText="预期表现"></nz-divider>
-            <div class="border">
-              <ng-container #answerComponentRef></ng-container>
-            </div>
+            <ng-container *ngIf="showAnswer">
+              <nz-divider nzText="预期表现"></nz-divider>
+              <div class="border">
+                <ng-container #answerComponentRef></ng-container>
+              </div>
+            </ng-container>
             <nz-divider nzText="作答区域"></nz-divider>
             <div class="border">
               <ng-container #questionComponentRef></ng-container>

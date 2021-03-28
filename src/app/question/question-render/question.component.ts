@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { getAnswerComponent, getQuestionComponent, page } from './config';
+import { getComponent, page } from './config';
 
 @Component({
   selector: 'app-question',
@@ -13,6 +13,8 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   /** 是否显示题解内容 */
   showAnalyse = false;
   firstRun = true;
+  /** 有些题目是没有参考答案的, 则不显示答案区域 */
+  showAnswer = true;
   questionMdSrc: string;
   analyseMdSrc: string;
   page = page;
@@ -47,27 +49,46 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   }
 
   private generateComponent(): void {
-    this.generateQuestionComponent();
-    this.generateAnswerComponent();
+    const { question, answer } = getComponent(this.index);
+    // 避免变更检查错误
+    setTimeout(() => {
+      this.generateQuestionComponent(question);
+      this.generateAnswerComponent(answer);
+    });
   }
 
-  private generateQuestionComponent(): void {
-    const questionComponent = getQuestionComponent(this.index);
-    const componentFactory = this.componentFactoryResolve.resolveComponentFactory(questionComponent);
-    this.questionComponentRef.clear();
-    const componentRef = this.questionComponentRef.createComponent(componentFactory);
-    componentRef.changeDetectorRef.detectChanges();
+  private generateQuestionComponent(component: any): void {
+    if (component) {
+      this.showAnswer = true;
+      this.cdr.detectChanges();
+      const componentFactory = this.componentFactoryResolve.resolveComponentFactory(component);
+      this.questionComponentRef.clear();
+      const componentRef = this.questionComponentRef.createComponent(componentFactory);
+      componentRef.changeDetectorRef.detectChanges();
+    } else {
+      this.showAnswer = false;
+    }
   }
 
-  private generateAnswerComponent(): void {
-    const answerComponent = getAnswerComponent(this.index);
-    const componentFactory = this.componentFactoryResolve.resolveComponentFactory(answerComponent);
-    this.answerComponentRef.clear();
-    const componentRef = this.answerComponentRef.createComponent(componentFactory);
-    componentRef.changeDetectorRef.detectChanges();
+  private generateAnswerComponent(component: any): void {
+    if (component) {
+      this.showAnswer = true;
+      this.cdr.detectChanges();
+      const componentFactory = this.componentFactoryResolve.resolveComponentFactory(component);
+      this.answerComponentRef.clear();
+      const componentRef = this.answerComponentRef.createComponent(componentFactory);
+      componentRef.changeDetectorRef.detectChanges();
+    } else {
+      this.showAnswer = false;
+    }
   }
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private componentFactoryResolve: ComponentFactoryResolver) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private componentFactoryResolve: ComponentFactoryResolver,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngAfterViewInit(): void {
     this.generateComponent();
