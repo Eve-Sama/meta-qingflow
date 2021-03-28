@@ -53,6 +53,7 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   private generateComponent(): void {
     const { question, answer, analyse } = getComponent(this.index);
     this.showAnalyseButton = analyse;
+    this.cdr.detectChanges();
     // 避免变更检查错误
     setTimeout(() => {
       this.generateQuestionComponent(question);

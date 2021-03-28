@@ -1,8 +1,23 @@
-<div *ngFor="let user of users">
-  <div>
-    <span>姓名: {{ user.name }} ---------- 角色: </span>
-    <span *ngIf="user.role === 1">管理员</span>
-    <span *ngIf="user.role === 2">用户</span>
-    <span> ---------- 年薪: {{ getYearSalary(user.salary) }}</span>
-  </div>
-</div>
+<table border="1">
+  <thead>
+    <tr>
+      <th>姓名</th>
+      <th>角色</th>
+      <th>年薪</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>
+        <ng-container *ngIf="user.role === 1">
+          管理员
+        </ng-container>
+        <ng-container *ngIf="user.role === 2">
+          用户
+        </ng-container>
+      </td>
+      <td>{{ getYearSalary(user.salary) }}</td>
+    </tr>
+  </tbody>
+</table>

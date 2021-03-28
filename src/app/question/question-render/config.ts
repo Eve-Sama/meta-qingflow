@@ -48,13 +48,11 @@ export function getComponent(index: string): { question: any; answer?: any; anal
       };
     case '05':
       return {
-        question: Question05Component,
-        analyse: false
+        question: Question05Component
       };
     case '06':
       return {
         question: Question06Component,
-        answer: Answer06Component,
         analyse: true
       };
     default:

@@ -5,17 +5,18 @@ import { Component } from '@angular/core';
   templateUrl: './question-06.component.html'
 })
 export class Question06Component {
-  // role: 1为管理员 2为用户
   users = [
     {
       name: '张三',
       role: 2,
-      salary: 10000
+      salary: 10000,
+      qingflower: true
     },
     {
       name: '李四',
       role: 2,
-      salary: 20000
+      salary: 20000,
+      qingflower: true
     },
     {
       name: '王五',
@@ -26,7 +27,7 @@ export class Question06Component {
   ];
 
   // 获取年薪
-  getYearSalary(value) {
-    return value * 12;
+  getYearSalary(salary) {
+    return salary * 12;
   }
 }
