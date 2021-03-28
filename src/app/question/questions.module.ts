@@ -25,10 +25,16 @@ import { Question03Component } from './question-list/question-03/question-03.com
 import { Question04Component } from './question-list/question-04/question-04.component';
 import { Question05Component } from './question-list/question-05/question-05.component';
 import { Question06Component } from './question-list/question-06/question-06.component';
+import { Answer00Component } from './answer-list/answer-00/answer-00.component';
+import { Answer01Component } from './answer-list/answer-01/answer-01.component';
+import { Answer02Component } from './answer-list/answer-02/answer-02.component';
+import { Answer03Component } from './answer-list/answer-03/answer-03.component';
+import { Answer04Component } from './answer-list/answer-04/answer-04.component';
+import { Answer05Component } from './answer-list/answer-05/answer-05.component';
+import { Answer06Component } from './answer-list/answer-06/answer-06.component';
 import { MarkdownModule } from 'ngx-markdown';
 import CN from './config/i18n/cn';
 import EN from './config/i18n/en';
-import { Answer00Component } from './answer-list/answer-00/answer-00.component';
 
 const QUESTION = [
   QuestionComponent,
@@ -41,7 +47,13 @@ const QUESTION = [
   Question06Component
 ];
 const ANSWER = [
-  Answer00Component
+  Answer00Component,
+  Answer01Component,
+  Answer02Component,
+  Answer03Component,
+  Answer04Component,
+  Answer05Component,
+  Answer06Component
 ];
 const ZORRO = [
   NzCardModule,

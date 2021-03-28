@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
+import { TranslateComponent } from '../../answer-list/common/translate/translate.component';
 
 @Component({
   selector: 'app-question-02',
   templateUrl: './question-02.component.html'
 })
-export class Question02Component {
+export class Question02Component extends TranslateComponent {
   openModal(): void {
     this.nzModalService.create({
       nzTitle: '前端',
@@ -14,5 +16,7 @@ export class Question02Component {
     });
   }
 
-  constructor(private nzModalService: NzModalService) {}
+  constructor(private nzModalService: NzModalService, translateService: TranslateService) {
+    super(translateService);
+  }
 }

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-question-06',
-  templateUrl: './question-06.component.html'
+  selector: 'app-answer-06',
+  templateUrl: './answer-06.component.html'
 })
-export class Question06Component {
+export class Answer06Component {
   // role: 1为管理员 2为用户
   users = [
     {

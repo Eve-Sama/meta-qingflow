@@ -1,3 +1,5 @@
+<nz-switch [(ngModel)]="isCn" nzCheckedChildren="当前为中文" nzUnCheckedChildren="当前为英文" (ngModelChange)="changeLanguage()"></nz-switch> <br><br>
+轻流表单有以下几种基础字段(部分)
 <ul>
-  <li *ngFor="let user of users">{{ user.name }} - {{ user.job }}</li>
+  <li *ngFor="let type of types">{{ type }}</li>
 </ul>

@@ -1,4 +1,10 @@
 import { Answer00Component } from '../answer-list/answer-00/answer-00.component';
+import { Answer01Component } from '../answer-list/answer-01/answer-01.component';
+import { Answer02Component } from '../answer-list/answer-02/answer-02.component';
+import { Answer03Component } from '../answer-list/answer-03/answer-03.component';
+import { Answer04Component } from '../answer-list/answer-04/answer-04.component';
+import { Answer05Component } from '../answer-list/answer-05/answer-05.component';
+import { Answer06Component } from '../answer-list/answer-06/answer-06.component';
 import { Question00Component } from '../question-list/question-00/question-00.component';
 import { Question01Component } from '../question-list/question-01/question-01.component';
 import { Question02Component } from '../question-list/question-02/question-02.component';
@@ -34,7 +40,19 @@ export function getAnswerComponent(index: string): any {
   switch (index) {
     case '00':
       return Answer00Component;
+    case '01':
+      return Answer01Component;
+    case '02':
+      return Answer02Component;
+    case '03':
+      return Answer03Component;
+    case '04':
+      return Answer04Component;
+    case '05':
+      return Answer05Component;
+    case '06':
+      return Answer06Component;
     default:
-      return Question00Component;
+      return Answer00Component;
   }
 }

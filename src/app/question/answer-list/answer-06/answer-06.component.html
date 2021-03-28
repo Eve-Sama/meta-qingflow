@@ -1,0 +1,8 @@
+<div *ngFor="let user of users">
+  <div>
+    <span>姓名: {{ user.name }} ---------- 角色: </span>
+    <span *ngIf="user.role === 1">管理员</span>
+    <span *ngIf="user.role === 2">用户</span>
+    <span> ---------- 年薪: {{ getYearSalary(user.salary) }}</span>
+  </div>
+</div>
