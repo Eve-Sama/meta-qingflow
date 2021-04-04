@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, SecurityContext } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -34,6 +34,8 @@ import { Answer06Component } from './answer-list/answer-06/answer-06.component';
 import { MarkdownModule } from 'ngx-markdown';
 import CN from './config/i18n/cn';
 import EN from './config/i18n/en';
+import { MarkdownComponent } from './markdown/markdown.component';
+import { AppMarkdownModule } from './markdown/markdown.module';
 
 const QUESTION = [
   QuestionComponent,
@@ -88,9 +90,7 @@ export class CustomTranslateLoader implements TranslateLoader {
     NzSwitchModule,
     NzGridModule,
     NzDividerModule,
-    MarkdownModule.forRoot({
-      loader: HttpClient
-    }),
+    AppMarkdownModule,
     TranslateModule.forRoot({
       defaultLanguage: 'cn',
       loader: {

@@ -7,7 +7,7 @@
       <div nz-col [nzSpan]="24">
         <nz-card>
           <div class="question-container">
-            <markdown [src]="questionMdSrc"></markdown>
+            <app-markdown [src]="questionMdSrc"></app-markdown>
             <ng-container *ngIf="showAnswer">
               <nz-divider nzText="预期表现"></nz-divider>
               <div class="border">
@@ -26,7 +26,7 @@
             <ng-container *ngIf="showAnalyseContent">
               <nz-divider nzText="题解"></nz-divider>
               <div class="border">
-                <markdown [src]="analyseMdSrc"></markdown>
+                <app-markdown [src]="analyseMdSrc"></app-markdown>
               </div>
             </ng-container>
           </div>
