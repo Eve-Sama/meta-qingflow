@@ -10,7 +10,40 @@ import { Question04Component } from '../question-list/question-04/question-04.co
 import { Question05Component } from '../question-list/question-05/question-05.component';
 import { Question06Component } from '../question-list/question-06/question-06.component';
 
-export const page = ['00', '01', '02', '03', '04', '05', '06'];
+export interface Page {
+  title: string;
+  index: string;
+}
+export const page: Page[] = [
+  {
+    title: '小试牛刀',
+    index: '00'
+  },
+  {
+    title: '初识Zorro',
+    index: '04'
+  },
+  {
+    title: '模板翻译',
+    index: '01'
+  },
+  {
+    title: 'TS翻译',
+    index: '02'
+  },
+  {
+    title: '复杂翻译',
+    index: '03'
+  },
+  {
+    title: 'git基操',
+    index: '05'
+  },
+  {
+    title: 'TS应用',
+    index: '06'
+  }
+];
 
 export function getComponent(index: string): { question: any; answer?: any; analyse?: boolean } {
   switch (index) {

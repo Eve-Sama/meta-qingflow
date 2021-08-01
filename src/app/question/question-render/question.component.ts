@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { getComponent, page } from './config';
+import { getComponent, Page, page } from './config';
 
 @Component({
   selector: 'app-question',
@@ -20,14 +21,15 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   questionMdSrc: string;
   analyseMdSrc: string;
   page = page;
+  activePage: Page;
 
   @ViewChild('questionComponentRef', { read: ViewContainerRef }) questionComponentRef: ViewContainerRef;
   @ViewChild('answerComponentRef', { read: ViewContainerRef }) answerComponentRef: ViewContainerRef;
 
   // 切换题目
   jump(action: 'previous' | 'next'): void {
-    const nextIndex = this.getPageIndex(action);
-    this.router.navigate([`../${nextIndex}`], { relativeTo: this.activatedRoute });
+    this.updatePageIndex(action);
+    this.router.navigate([`../${this.activePage.index}`], { relativeTo: this.activatedRoute });
   }
 
   private setMarkdown(): void {
@@ -35,19 +37,17 @@ export class QuestionComponent implements OnInit, AfterViewInit {
     this.analyseMdSrc = `assets/md/analyse/${this.index}.md`;
   }
 
-  private getPageIndex(action: 'previous' | 'next'): string {
-    let res: string;
-    const index = this.page.findIndex(v => v === this.index);
+  private updatePageIndex(action: 'previous' | 'next'): void {
+    const index = this.page.findIndex(v => v.index === this.index);
     if (index === 0 && action === 'previous') {
-      res = this.index;
       alert('当前已经是第一题了');
+      return;
     } else if (index === this.page.length - 1 && action === 'next') {
-      res = this.index;
       alert('当前已经是最后一题了');
+      return;
     } else {
-      res = this.page[action === 'previous' ? index - 1 : index + 1];
+      this.activePage = this.page[action === 'previous' ? index - 1 : index + 1];
     }
-    return res;
   }
 
   private generateComponent(): void {
@@ -59,6 +59,14 @@ export class QuestionComponent implements OnInit, AfterViewInit {
       this.generateQuestionComponent(question);
       this.generateAnswerComponent(answer);
     });
+    this.setTitle();
+  }
+
+  private setTitle(): void {
+    if (!this.activePage) {
+      this.activePage = this.page.find(v => v.index === this.index);
+    }
+    this.title.setTitle(this.activePage.title);
   }
 
   private generateQuestionComponent(component: any): void {
@@ -89,6 +97,7 @@ export class QuestionComponent implements OnInit, AfterViewInit {
 
   constructor(
     private router: Router,
+    private title: Title,
     private activatedRoute: ActivatedRoute,
     private componentFactoryResolve: ComponentFactoryResolver,
     private cdr: ChangeDetectorRef
