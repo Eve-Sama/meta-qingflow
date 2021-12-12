@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { getComponent } from './config';
+import { getComponent, PageOrder } from './config';
 
 @Component({
   selector: 'app-question',
@@ -9,9 +9,9 @@ import { getComponent } from './config';
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit, AfterViewInit {
-  private pageOrder: string[] = ['00', '04', '01', '02', '03', '05', '06'];
   /** 题目序号 */
-  private index: string;
+  private index: typeof PageOrder[number];
+  private pageOrder = PageOrder;
 
   /** 是否显示题解内容 */
   showAnalyseContent = false;

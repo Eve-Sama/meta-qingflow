@@ -1,4 +1,4 @@
-import { NgModule, SecurityContext } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -14,7 +14,6 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { QuestionsRoutingModule } from './questions-routing.module';
 import { QuestionComponent } from './question-render/question.component';
@@ -31,11 +30,10 @@ import { Answer02Component } from './answer-list/answer-02/answer-02.component';
 import { Answer03Component } from './answer-list/answer-03/answer-03.component';
 import { Answer05Component } from './answer-list/answer-05/answer-05.component';
 import { Answer06Component } from './answer-list/answer-06/answer-06.component';
-import { MarkdownModule } from 'ngx-markdown';
 import CN from './config/i18n/cn';
 import EN from './config/i18n/en';
-import { MarkdownComponent } from './markdown/markdown.component';
 import { AppMarkdownModule } from './markdown/markdown.module';
+import { Answer08Component } from './answer-list/answer-08/answer-08.component';
 
 const QUESTION = [
   QuestionComponent,
@@ -53,7 +51,8 @@ const ANSWER = [
   Answer02Component,
   Answer03Component,
   Answer05Component,
-  Answer06Component
+  Answer06Component,
+  Answer08Component
 ];
 const ZORRO = [
   NzCardModule,
