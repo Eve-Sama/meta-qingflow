@@ -6,6 +6,7 @@ import { Answer03Component } from '@answer/answer-03/answer-03.component';
 import { Answer05Component } from '@answer/answer-05/answer-05.component';
 import { Answer06Component } from '@answer/answer-06/answer-06.component';
 import { Answer08Component } from '@answer/answer-08/answer-08.component';
+import { Answer09Component } from '@answer/answer-09/answer-09.component';
 import { Question00Component } from '@question/question-00/question-00.component';
 import { Question01Component } from '@question/question-01/question-01.component';
 import { Question02Component } from '@question/question-02/question-02.component';
@@ -14,6 +15,7 @@ import { Question04Component } from '@question/question-04/question-04.component
 import { Question05Component } from '@question/question-05/question-05.component';
 import { Question06Component } from '@question/question-06/question-06.component';
 import { Question08Component } from '@question/question-08/question-08.component';
+import { Question09Component } from '@question/question-09/question-09.component';
 
 export const QUESTION = [
   Question00Component,
@@ -22,7 +24,8 @@ export const QUESTION = [
   Question03Component,
   Question04Component,
   Question05Component,
-  Question06Component
+  Question06Component,
+  Question09Component,
 ];
 export const ANSWER = [
   Answer00Component,
@@ -31,11 +34,12 @@ export const ANSWER = [
   Answer03Component,
   Answer05Component,
   Answer06Component,
-  Answer08Component
+  Answer08Component,
+  Answer09Component,
 ];
 
 /** 题目的序号 */
-export const PageOrder = <const>['00', '08', '04', '01', '02', '03', '05', '06'];
+export const PageOrder = <const>['00', '08', '09', '04', '01', '02', '03', '05', '06'];
 
 /** 每道题目的配置情况 */
 export function getComponent(index: typeof PageOrder[number]): { question: Type<unknown>; answer?: Type<unknown>; title: string; analyse?: boolean } {
@@ -90,6 +94,13 @@ export function getComponent(index: typeof PageOrder[number]): { question: Type<
         question: Question08Component,
         answer: Answer08Component,
         title: '双向绑定'
+      };
+    case '09':
+      return {
+        question: Question09Component,
+        answer: Answer09Component,
+        title: '循环遍历',
+        analyse: true
       };
     default:
       throw new Error('The method getComponent() can not find valid components');

@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let item of list; let index = index; let first = first; let last = last">
+    <span [ngClass]="{ red: first, blue: last }">{{ index }}: {{ item }}</span>
+  </li>
+</ul>
