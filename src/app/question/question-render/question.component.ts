@@ -42,7 +42,7 @@ export class QuestionComponent implements OnInit, AfterViewInit {
 
   /** 根据页序号去读取该序号对应的需求描述与题解描述 */
   private setMarkdown(): void {
-    this.questionMdSrc = `assets/md/question/${this.index}.md`;
+    this.questionMdSrc = `assets/md/describe/${this.index}.md`;
     this.analyseMdSrc = `assets/md/analyse/${this.index}.md`;
   }
 
