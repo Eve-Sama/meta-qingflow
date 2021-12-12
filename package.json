@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
-    "deploy": "ng deploy --base-href=\"./\" --no-silent"
+    "deploy": "ng deploy --base-href=\"./\" --no-silent",
+    "add": "ng g meta-qingflow-schema:meta-qingflow-schema"
   },
   "private": true,
   "dependencies": {
