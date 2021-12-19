@@ -13,7 +13,7 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { QuestionsRoutingModule } from './questions-routing.module';
 import CN from './config/i18n/cn';
@@ -52,6 +52,7 @@ class CustomTranslateLoader implements TranslateLoader {
     CommonModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     NzCardModule,
     NzButtonModule,
     NzSwitchModule,

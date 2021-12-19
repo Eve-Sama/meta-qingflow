@@ -7,6 +7,7 @@ import { Answer05Component } from '@answer/answer-05/answer-05.component';
 import { Answer06Component } from '@answer/answer-06/answer-06.component';
 import { Answer08Component } from '@answer/answer-08/answer-08.component';
 import { Answer09Component } from '@answer/answer-09/answer-09.component';
+import { Answer10Component } from '@answer/answer-10/answer-10.component';
 import { Question00Component } from '@question/question-00/question-00.component';
 import { Question01Component } from '@question/question-01/question-01.component';
 import { Question02Component } from '@question/question-02/question-02.component';
@@ -16,6 +17,7 @@ import { Question05Component } from '@question/question-05/question-05.component
 import { Question06Component } from '@question/question-06/question-06.component';
 import { Question08Component } from '@question/question-08/question-08.component';
 import { Question09Component } from '@question/question-09/question-09.component';
+import { Question10Component } from '@question/question-10/question-10.component';
 
 export const QUESTION = [
   Question00Component,
@@ -39,7 +41,7 @@ export const ANSWER = [
 ];
 
 /** 题目的序号 */
-export const PageOrder = <const>['00', '08', '09', '04', '01', '02', '03', '05', '06'];
+export const PageOrder = <const>['00', '08', '09', '10', '04', '01', '02', '03', '05', '06'];
 
 /** 每道题目的配置情况 */
 export function getComponent(index: typeof PageOrder[number]): { question: Type<unknown>; answer?: Type<unknown>; title: string; analyse?: boolean } {
@@ -100,6 +102,13 @@ export function getComponent(index: typeof PageOrder[number]): { question: Type<
         question: Question09Component,
         answer: Answer09Component,
         title: '循环遍历',
+        analyse: true
+      };
+    case '10':
+      return {
+        question: Question10Component,
+        answer: Answer10Component,
+        title: '父子组件',
         analyse: true
       };
     default:
