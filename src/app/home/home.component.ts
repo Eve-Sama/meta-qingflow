@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  constructor(private router: Router) {
-    setTimeout(() => {
-      // this.router.navigate(['/task-1/easy-translation']).catch();
-    }, 3000);
+export class HomeComponent implements OnInit {
+  constructor(private title: Title) {}
+
+  ngOnInit(): void {
+    this.title.setTitle('轻流前端新手任务');
   }
 }

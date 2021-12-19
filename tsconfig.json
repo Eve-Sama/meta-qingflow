@@ -14,8 +14,7 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "@question/*": ["src/app/question/question-list/*"],
-      "@answer/*": ["src/app/question/answer-list/*"]
+      "@QAA/*": ["src/app/QAA/*"]
     }
   }
 }

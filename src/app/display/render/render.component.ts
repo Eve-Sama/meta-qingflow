@@ -1,14 +1,14 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { getComponent, PageOrder } from '../config';
+import { PageOrder, getComponent } from '@QAA/QAA.config';
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.scss']
+  selector: 'app-render',
+  templateUrl: './render.component.html',
+  styleUrls: ['./render.component.scss']
 })
-export class QuestionComponent implements OnInit, AfterViewInit {
+export class RenderComponent implements OnInit, AfterViewInit {
   /** 题目序号 */
   private index: typeof PageOrder[number];
   private pageOrder = PageOrder;

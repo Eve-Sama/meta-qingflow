@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateComponent } from '../common/translate/translate.component';
+import { TranslateComponent } from '@QAA/common/translate/translate.component';
 
 @Component({
   selector: 'app-answer-01',

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { QuestionComponent } from './question-render/question.component';
+import { RenderComponent } from './render/render.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: QuestionComponent
+    component: RenderComponent
   },
   {
     path: '**',
@@ -17,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class QuestionsRoutingModule {}
+export class DisplayRoutingModule {}

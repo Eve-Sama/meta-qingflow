@@ -1,23 +1,23 @@
 import { Type } from '@angular/core';
-import { Answer00Component } from '@answer/answer-00/answer-00.component';
-import { Answer01Component } from '@answer/answer-01/answer-01.component';
-import { Answer02Component } from '@answer/answer-02/answer-02.component';
-import { Answer03Component } from '@answer/answer-03/answer-03.component';
-import { Answer05Component } from '@answer/answer-05/answer-05.component';
-import { Answer06Component } from '@answer/answer-06/answer-06.component';
-import { Answer08Component } from '@answer/answer-08/answer-08.component';
-import { Answer09Component } from '@answer/answer-09/answer-09.component';
-import { Answer10Component } from '@answer/answer-10/answer-10.component';
-import { Question00Component } from '@question/question-00/question-00.component';
-import { Question01Component } from '@question/question-01/question-01.component';
-import { Question02Component } from '@question/question-02/question-02.component';
-import { Question03Component } from '@question/question-03/question-03.component';
-import { Question04Component } from '@question/question-04/question-04.component';
-import { Question05Component } from '@question/question-05/question-05.component';
-import { Question06Component } from '@question/question-06/question-06.component';
-import { Question08Component } from '@question/question-08/question-08.component';
-import { Question09Component } from '@question/question-09/question-09.component';
-import { Question10Component } from '@question/question-10/question-10.component';
+import { Answer00Component } from './answer/answer-00/answer-00.component';
+import { Answer01Component } from './answer/answer-01/answer-01.component';
+import { Answer02Component } from './answer/answer-02/answer-02.component';
+import { Answer03Component } from './answer/answer-03/answer-03.component';
+import { Answer05Component } from './answer/answer-05/answer-05.component';
+import { Answer06Component } from './answer/answer-06/answer-06.component';
+import { Answer08Component } from './answer/answer-08/answer-08.component';
+import { Answer09Component } from './answer/answer-09/answer-09.component';
+import { Answer10Component } from './answer/answer-10/answer-10.component';
+import { Question00Component } from './question/question-00/question-00.component';
+import { Question01Component } from './question/question-01/question-01.component';
+import { Question02Component } from './question/question-02/question-02.component';
+import { Question03Component } from './question/question-03/question-03.component';
+import { Question04Component } from './question/question-04/question-04.component';
+import { Question05Component } from './question/question-05/question-05.component';
+import { Question06Component } from './question/question-06/question-06.component';
+import { Question08Component } from './question/question-08/question-08.component';
+import { Question09Component } from './question/question-09/question-09.component';
+import { Question10Component } from './question/question-10/question-10.component';
 
 export const QUESTION = [
   Question00Component,
@@ -28,6 +28,7 @@ export const QUESTION = [
   Question05Component,
   Question06Component,
   Question09Component,
+  Question10Component
 ];
 export const ANSWER = [
   Answer00Component,
@@ -38,6 +39,7 @@ export const ANSWER = [
   Answer06Component,
   Answer08Component,
   Answer09Component,
+  Answer10Component
 ];
 
 /** 题目的序号 */

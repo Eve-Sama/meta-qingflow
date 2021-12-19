@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateComponent } from '../common/translate/translate.component';
+import { TranslateComponent } from '@QAA/common/translate/translate.component';
+
 
 @Component({
   selector: 'app-answer-02',

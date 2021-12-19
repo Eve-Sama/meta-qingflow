@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'question/:index',
-    loadChildren: () => import('./question/questions.module').then(m => m.QuestionsModule)
+    loadChildren: () => import('./display/display.module').then(m => m.DisplayModule)
   },
   {
     path: '**',
