@@ -28,7 +28,7 @@ export const QUESTION = [
   Question05Component,
   Question06Component,
   Question09Component,
-  Question10Component
+  Question10Component,
 ];
 export const ANSWER = [
   Answer00Component,
@@ -39,79 +39,84 @@ export const ANSWER = [
   Answer06Component,
   Answer08Component,
   Answer09Component,
-  Answer10Component
+  Answer10Component,
 ];
 
 /** 题目的序号 */
 export const PageOrder = <const>['00', '08', '09', '10', '04', '01', '02', '03', '05', '06'];
 
 /** 每道题目的配置情况 */
-export function getComponent(index: typeof PageOrder[number]): { question: Type<unknown>; answer?: Type<unknown>; title: string; analyse?: boolean } {
+export function getComponent(index: typeof PageOrder[number]): {
+  question: Type<unknown>;
+  answer?: Type<unknown>;
+  title: string;
+  analyse?: boolean;
+} {
   switch (index) {
     case '00':
       return {
         question: Question00Component,
         answer: Answer00Component,
         title: '小试牛刀',
-        analyse: true
+        analyse: true,
       };
     case '01':
       return {
         question: Question01Component,
         answer: Answer01Component,
         title: '模板翻译',
-        analyse: true
+        analyse: true,
       };
     case '02':
       return {
         question: Question02Component,
         answer: Answer02Component,
         title: 'TS翻译',
-        analyse: true
+        analyse: true,
       };
     case '03':
       return {
         question: Question03Component,
         answer: Answer03Component,
         title: '复杂翻译',
-        analyse: true
+        analyse: true,
       };
     case '04':
       return {
         question: Question04Component,
         title: '初识Zorro',
-        analyse: true
+        analyse: true,
       };
     case '05':
       return {
         question: Question05Component,
-        title: 'Git基操'
+        title: 'Git基操',
       };
     case '06':
       return {
         question: Question06Component,
         title: 'TS应用',
-        analyse: true
+        analyse: true,
       };
     case '08':
       return {
         question: Question08Component,
         answer: Answer08Component,
-        title: '双向绑定'
+        title: '双向绑定',
       };
     case '09':
       return {
         question: Question09Component,
         answer: Answer09Component,
         title: '循环遍历',
-        analyse: true
+        analyse: true,
       };
     case '10':
       return {
         question: Question10Component,
         answer: Answer10Component,
         title: '父子组件',
-        analyse: true
+        analyse: true,
       };
     default:
       throw new Error('The method getComponent() can not find valid components');
