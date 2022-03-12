@@ -2,8 +2,8 @@ import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
-  ComponentFactoryResolver,
   OnInit,
+  Type,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
@@ -53,20 +53,18 @@ export class RenderComponent implements OnInit, AfterViewInit {
     this.title.setTitle(title);
   }
 
-  private generateQuestionComponent(component: any): void {
-    const componentFactory = this.componentFactoryResolve.resolveComponentFactory(component);
+  private generateQuestionComponent(component: Type<unknown>): void {
     this.questionComponentRef.clear();
-    const componentRef = this.questionComponentRef.createComponent(componentFactory);
+    const componentRef = this.questionComponentRef.createComponent(component);
     componentRef.changeDetectorRef.detectChanges();
   }
 
-  private generateAnswerComponent(component: any): void {
+  private generateAnswerComponent(component: Type<unknown>): void {
     if (component) {
       this.showAnswer = true;
       this.cdr.detectChanges();
-      const componentFactory = this.componentFactoryResolve.resolveComponentFactory(component);
       this.answerComponentRef.clear();
-      const componentRef = this.answerComponentRef.createComponent(componentFactory);
+      const componentRef = this.answerComponentRef.createComponent(component);
       componentRef.changeDetectorRef.detectChanges();
     } else {
       this.showAnswer = false;
@@ -76,7 +74,6 @@ export class RenderComponent implements OnInit, AfterViewInit {
   constructor(
     private title: Title,
     private activatedRoute: ActivatedRoute,
-    private componentFactoryResolve: ComponentFactoryResolver,
     private cdr: ChangeDetectorRef,
   ) {}
 
