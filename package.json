@@ -2,12 +2,10 @@
   "name": "meta-qingflow",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "lint": "ng lint",
     "deploy": "ng deploy --base-href=\"./\" --no-silent",
-    "add": "ng g meta-qingflow-schema:meta-qingflow-schema"
+    "add": "ng g @eve-sama/meta-qingflow-schema:meta-qingflow-schema"
   },
   "private": true,
   "dependencies": {
