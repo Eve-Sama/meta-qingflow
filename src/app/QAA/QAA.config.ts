@@ -47,7 +47,7 @@ export const MenuList: TaskMenu[] = [
     title: '事件',
     children: [
       {
-        id: '01',
+        id: null,
         question: null,
         title: 'click',
         analyse: true,
