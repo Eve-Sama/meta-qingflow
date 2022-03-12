@@ -3,6 +3,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -22,6 +23,7 @@ import { QAAModule } from '@QAA/QAA.module';
     NzGridModule,
     NzDividerModule,
     AppMarkdownModule,
+    NzMenuModule,
     QAAModule
   ],
   declarations: [RenderComponent]

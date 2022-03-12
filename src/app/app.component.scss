@@ -16,6 +16,13 @@
       margin: 0 16px;
       cursor: pointer;
     }
+    .menu {
+      padding: 18px;
+      cursor: pointer;
+      user-select: none;
+      &:hover {
+        color: #000;
+      }
+    }
   }
-  
 }
