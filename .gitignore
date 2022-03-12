@@ -9,7 +9,7 @@ deploy-newhuan.sh
 yarn-error.log
 proxy.conf.json
 **/src/environment.js
-
+.yalc/*
 # vim cache files
 *.swp
 *.swo

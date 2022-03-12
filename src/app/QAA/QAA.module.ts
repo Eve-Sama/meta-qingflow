@@ -29,7 +29,7 @@ const ZORRO = [
   NzDividerModule,
   NzIconModule,
   NzModalModule,
-  NzMessageModule
+  NzMessageModule,
 ];
 
 class CustomTranslateLoader implements TranslateLoader {
@@ -52,12 +52,11 @@ class CustomTranslateLoader implements TranslateLoader {
       defaultLanguage: 'cn',
       loader: {
         provide: TranslateLoader,
-        useClass: CustomTranslateLoader
-      }
+        useClass: CustomTranslateLoader,
+      },
     }),
-    ...ZORRO
+    ...ZORRO,
   ],
   declarations: [...QUESTION, ...ANSWER],
-  exports: [...QUESTION, ...ANSWER]
 })
 export class QAAModule {}

@@ -1,7 +1,7 @@
 <div class="navbar-container">
   <div class="toolbar" role="banner">
     <img width="88" alt="Qingflow" routerLink="\home" src="https://file.qingflow.com/assets/logo.png" />
-    <div *ngFor="let menu of menus" class="menu" (click)="click(menu)">{{ menu.title }}</div>
+    <div *ngFor="let menu of menus" class="menu" (click)="click(menu.type)">{{ menu.title }}</div>
   </div>
 </div>
 <router-outlet></router-outlet>

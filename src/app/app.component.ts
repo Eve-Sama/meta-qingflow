@@ -22,8 +22,8 @@ export class AppComponent {
     },
   ] as const;
 
-  click(type: typeof this.menus[number]): void {
-    switch (type.type) {
+  click(type: typeof this.menus[number]['type']): void {
+    switch (type) {
       case 'task':
         this.nzMessageService.warning('现在这个界面不就是吗?');
         break;

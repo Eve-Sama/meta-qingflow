@@ -1,0 +1,16 @@
+<ul nz-menu nzMode="inline">
+  <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menuList }"></ng-container>
+  <ng-template #menuTpl let-menuList>
+    <ng-container *ngFor="let menu of menuList">
+      <li *ngIf="!menu.children" nz-menu-item [nzPaddingLeft]="menu.level * 24" [nzSelected]="false"
+        (click)="changePage(menu.page)">
+        <span>{{ menu.title }}</span>
+      </li>
+      <li *ngIf="menu.children" nz-submenu [nzPaddingLeft]="menu.level * 24" [nzOpen]="false" [nzTitle]="menu.title">
+        <ul>
+          <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menu.children }"></ng-container>
+        </ul>
+      </li>
+    </ng-container>
+  </ng-template>
+</ul>

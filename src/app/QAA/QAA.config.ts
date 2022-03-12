@@ -1,4 +1,5 @@
 import { Type } from '@angular/core';
+import { TaskMenu } from '../utils/interface/task.interface';
 import { Answer00Component } from './answer/answer-00/answer-00.component';
 import { Answer01Component } from './answer/answer-01/answer-01.component';
 import { Answer02Component } from './answer/answer-02/answer-02.component';
@@ -40,6 +41,46 @@ export const ANSWER = [
   Answer08Component,
   Answer09Component,
   Answer10Component,
+];
+
+export const MenuList: TaskMenu[] = [
+  {
+    title: '事件',
+    children: [
+      {
+        id: '01',
+        question: Question01Component,
+        answer: Answer01Component,
+        title: '模板翻译',
+        analyse: true,
+      },
+      {
+        id: '02',
+        question: Question02Component,
+        answer: Answer02Component,
+        title: 'TS翻译',
+        analyse: true,
+      },
+    ],
+  },
+  {
+    title: '事件2',
+    children: [
+      {
+        id: '03',
+        question: Question03Component,
+        answer: Answer03Component,
+        title: '复杂翻译',
+        analyse: true,
+      },
+      {
+        id: '04',
+        question: Question04Component,
+        title: '初识Zorro',
+        analyse: true,
+      },
+    ],
+  },
 ];
 
 /** 题目的序号 */

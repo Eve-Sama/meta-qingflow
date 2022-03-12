@@ -11,6 +11,7 @@ import { AppMarkdownModule } from './markdown/markdown.module';
 import { RenderComponent } from './render/render.component';
 import { DisplayRoutingModule } from './display-routing.module';
 import { QAAModule } from '@QAA/QAA.module';
+import { MenuComponent } from './render/menu/menu.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,6 @@ import { QAAModule } from '@QAA/QAA.module';
     NzMenuModule,
     QAAModule
   ],
-  declarations: [RenderComponent]
+  declarations: [RenderComponent, MenuComponent]
 })
 export class DisplayModule {}
