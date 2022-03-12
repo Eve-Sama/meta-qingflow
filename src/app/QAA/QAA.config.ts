@@ -47,6 +47,27 @@ export const MenuList: TaskMenu[] = [
     title: '事件',
     children: [
       {
+        id: '00',
+        question: Question00Component,
+        answer: Answer00Component,
+        title: 'ngIf',
+        analyse: true,
+      },
+      {
+        id: '08',
+        question: Question08Component,
+        answer: Answer08Component,
+        title: 'ngModel',
+        analyse: true,
+      },
+      {
+        id: '09',
+        question: Question09Component,
+        answer: Answer09Component,
+        title: 'ngFor',
+        analyse: true,
+      },
+      {
         id: null,
         question: null,
         title: 'click',
@@ -62,20 +83,6 @@ export const MenuList: TaskMenu[] = [
         id: null,
         question: null,
         title: 'mouseleave',
-        analyse: true,
-      },
-      {
-        id: '08',
-        question: Question08Component,
-        answer: Answer08Component,
-        title: 'ngModel',
-        analyse: true,
-      },
-      {
-        id: '09',
-        question: Question09Component,
-        answer: Answer09Component,
-        title: 'ngFor',
         analyse: true,
       },
     ],
