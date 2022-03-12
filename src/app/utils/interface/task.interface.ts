@@ -1,7 +1,7 @@
 import { Type } from '@angular/core';
 
 /** 二级菜单结构 */
-export interface TaskChidlrenMenum {
+export interface TaskChidlrenMenu {
   /** 每个题目的编号 */
   id: string;
   /** 题目组件 */
@@ -19,7 +19,7 @@ export interface TaskMenu {
   /** 一级菜单标题 */
   title: string;
   /** 子菜单 */
-  children: TaskChidlrenMenum[];
+  children: TaskChidlrenMenu[];
 }
 
 export interface Menu1 {

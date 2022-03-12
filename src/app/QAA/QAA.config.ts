@@ -1,4 +1,3 @@
-import { Type } from '@angular/core';
 import { TaskMenu } from '../utils/interface/task.interface';
 import { Answer00Component } from './answer/answer-00/answer-00.component';
 import { Answer01Component } from './answer/answer-01/answer-01.component';
@@ -49,6 +48,43 @@ export const MenuList: TaskMenu[] = [
     children: [
       {
         id: '01',
+        question: null,
+        title: 'click',
+        analyse: true,
+      },
+      {
+        id: null,
+        question: null,
+        title: 'mouseenter',
+        analyse: true,
+      },
+      {
+        id: null,
+        question: null,
+        title: 'mouseleave',
+        analyse: true,
+      },
+      {
+        id: '08',
+        question: Question08Component,
+        answer: Answer08Component,
+        title: 'ngModel',
+        analyse: true,
+      },
+      {
+        id: '09',
+        question: Question09Component,
+        answer: Answer09Component,
+        title: 'ngFor',
+        analyse: true,
+      },
+    ],
+  },
+  {
+    title: '翻译',
+    children: [
+      {
+        id: '01',
         question: Question01Component,
         answer: Answer01Component,
         title: '模板翻译',
@@ -58,14 +94,9 @@ export const MenuList: TaskMenu[] = [
         id: '02',
         question: Question02Component,
         answer: Answer02Component,
-        title: 'TS翻译',
+        title: 'TypeScript翻译',
         analyse: true,
       },
-    ],
-  },
-  {
-    title: '事件2',
-    children: [
       {
         id: '03',
         question: Question03Component,
@@ -73,6 +104,11 @@ export const MenuList: TaskMenu[] = [
         title: '复杂翻译',
         analyse: true,
       },
+    ],
+  },
+  {
+    title: 'Zorro',
+    children: [
       {
         id: '04',
         question: Question04Component,
@@ -81,85 +117,79 @@ export const MenuList: TaskMenu[] = [
       },
     ],
   },
-];
-
-/** 题目的序号 */
-export const PageOrder = <const>['00', '08', '09', '10', '04', '01', '02', '03', '05', '06'];
-
-/** 每道题目的配置情况 */
-export function getComponent(index: typeof PageOrder[number]): {
-  question: Type<unknown>;
-  answer?: Type<unknown>;
-  title: string;
-  analyse?: boolean;
-} {
-  switch (index) {
-    case '00':
-      return {
-        question: Question00Component,
-        answer: Answer00Component,
-        title: '小试牛刀',
-        analyse: true,
-      };
-    case '01':
-      return {
-        question: Question01Component,
-        answer: Answer01Component,
-        title: '模板翻译',
-        analyse: true,
-      };
-    case '02':
-      return {
-        question: Question02Component,
-        answer: Answer02Component,
-        title: 'TS翻译',
-        analyse: true,
-      };
-    case '03':
-      return {
-        question: Question03Component,
-        answer: Answer03Component,
-        title: '复杂翻译',
-        analyse: true,
-      };
-    case '04':
-      return {
-        question: Question04Component,
-        title: '初识Zorro',
-        analyse: true,
-      };
-    case '05':
-      return {
+  {
+    title: 'Git',
+    children: [
+      {
+        id: '05',
         question: Question05Component,
         title: 'Git基操',
-      };
-    case '06':
-      return {
-        question: Question06Component,
-        title: 'TS应用',
-        analyse: true,
-      };
-    case '08':
-      return {
-        question: Question08Component,
-        answer: Answer08Component,
-        title: '双向绑定',
-      };
-    case '09':
-      return {
-        question: Question09Component,
-        answer: Answer09Component,
-        title: '循环遍历',
-        analyse: true,
-      };
-    case '10':
-      return {
-        question: Question10Component,
-        answer: Answer10Component,
-        title: '父子组件',
-        analyse: true,
-      };
-    default:
-      throw new Error('The method getComponent() can not find valid components');
-  }
-}
+      },
+    ],
+  },
+  {
+    title: 'Service',
+    children: [
+      {
+        id: null,
+        question: null,
+        title: '模块级Provider',
+      },
+      {
+        id: null,
+        question: null,
+        title: '组件级Provider',
+      },
+    ],
+  },
+  {
+    title: '父子组件',
+    children: [
+      {
+        id: null,
+        question: null,
+        title: '父组件调用子组件标签',
+      },
+      {
+        id: null,
+        question: null,
+        title: '父组件调用子组件方法',
+      },
+      {
+        id: null,
+        question: null,
+        title: '子组件通知父组件',
+      },
+    ],
+  },
+  {
+    title: '生命周期',
+    children: [
+      {
+        id: null,
+        question: null,
+        title: 'ngOnInit',
+      },
+      {
+        id: null,
+        question: null,
+        title: 'ngOnDestroy',
+      },
+      {
+        id: null,
+        question: null,
+        title: 'ngOnChanges',
+      },
+    ],
+  },
+  {
+    title: 'TypeScript',
+    children: [
+      {
+        id: null,
+        question: null,
+        title: '函数参数类型与返回值',
+      },
+    ],
+  },
+];

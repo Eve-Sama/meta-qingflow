@@ -1,17 +1,25 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ComponentFactoryResolver,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { PageOrder, getComponent } from '@QAA/QAA.config';
+import { ActivatedRoute, Params } from '@angular/router';
+import { MenuList } from '@QAA/QAA.config';
+import { TaskChidlrenMenu } from 'src/app/utils/interface/task.interface';
 
 @Component({
   selector: 'app-render',
   templateUrl: './render.component.html',
-  styleUrls: ['./render.component.scss']
+  styleUrls: ['./render.component.scss'],
 })
 export class RenderComponent implements OnInit, AfterViewInit {
   /** 题目序号 */
-  private index: typeof PageOrder[number];
-  private pageOrder = PageOrder;
+  private id: string;
 
   /** 是否显示题解内容 */
   showAnalyseContent = false;
@@ -21,33 +29,20 @@ export class RenderComponent implements OnInit, AfterViewInit {
   showAnswer: boolean;
   questionMdSrc: string;
   analyseMdSrc: string;
+  children: TaskChidlrenMenu[] = [];
 
   @ViewChild('questionComponentRef', { read: ViewContainerRef }) questionComponentRef: ViewContainerRef;
   @ViewChild('answerComponentRef', { read: ViewContainerRef }) answerComponentRef: ViewContainerRef;
 
-  // 切换题目
-  jump(action: 'previous' | 'next'): void {
-    const index = this.pageOrder.findIndex(v => v === this.index);
-    if (index === 0 && action === 'previous') {
-      alert('当前已经是第一题了');
-      return;
-    } else if (index === this.pageOrder.length - 1 && action === 'next') {
-      alert('当前已经是最后一题了');
-      return;
-    } else {
-      const newPageIndex = this.pageOrder[action === 'previous' ? index - 1 : index + 1];
-      this.router.navigate([`../${newPageIndex}`], { relativeTo: this.activatedRoute });
-    }
-  }
-
   /** 根据页序号去读取该序号对应的需求描述与题解描述 */
   private setMarkdown(): void {
-    this.questionMdSrc = `assets/md/describe/${this.index}.md`;
-    this.analyseMdSrc = `assets/md/analyse/${this.index}.md`;
+    this.questionMdSrc = `assets/md/describe/${this.id}.md`;
+    this.analyseMdSrc = `assets/md/analyse/${this.id}.md`;
   }
 
   private generateComponent(): void {
-    const { question, answer, analyse, title } = getComponent(this.index);
+    const target = this.children.find(v => v.id === this.id);
+    const { question, answer, analyse, title } = target;
     this.showAnalyseButton = analyse;
     this.cdr.detectChanges();
     // 避免变更检查错误
@@ -79,11 +74,10 @@ export class RenderComponent implements OnInit, AfterViewInit {
   }
 
   constructor(
-    private router: Router,
     private title: Title,
     private activatedRoute: ActivatedRoute,
     private componentFactoryResolve: ComponentFactoryResolver,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngAfterViewInit(): void {
@@ -91,9 +85,10 @@ export class RenderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    MenuList.forEach(v => this.children.push(...v.children));
     this.activatedRoute.params.subscribe((params: Params) => {
       this.showAnalyseContent = false;
-      this.index = params.index;
+      this.id = params.index;
       this.setMarkdown();
       this.generateComponent();
     });

@@ -1,13 +1,15 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuList } from '@QAA/QAA.config';
-import { TaskChidlrenMenum, TaskMenu } from 'src/app/utils/interface/task.interface';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { TaskChidlrenMenu, TaskMenu } from 'src/app/utils/interface/task.interface';
 
 interface DisplayMenuBasic {
   /** 第几层菜单, 只用于缩进左边距 */
   level: number;
 }
 
-interface DisplayChildrenMenu extends TaskChidlrenMenum, DisplayMenuBasic {}
+interface DisplayChildrenMenu extends TaskChidlrenMenu, DisplayMenuBasic {}
 
 interface DisplayMenu extends TaskMenu, DisplayMenuBasic {
   children: DisplayChildrenMenu[];
@@ -22,6 +24,14 @@ export class MenuComponent implements OnInit, AfterViewInit {
   private _MenuList = MenuList;
 
   menuList: DisplayMenu[];
+
+  changePage(id: string): void {
+    if (!id) {
+      this.nzMessageService.error('这题还没造呢!');
+      return;
+    }
+    this.router.navigate([`../${id}`], { relativeTo: this.activatedRoute });
+  }
 
   /** 会对菜单数据手动赋值一些侧边栏才用的到的字段信息 */
   private _initMenu(menuList: TaskMenu[]): DisplayMenu[] {
@@ -40,6 +50,12 @@ export class MenuComponent implements OnInit, AfterViewInit {
     });
     return newMenuList;
   }
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private nzMessageService: NzMessageService
+  ) {}
 
   ngAfterViewInit(): void {}
 
