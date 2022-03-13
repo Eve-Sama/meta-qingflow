@@ -4,7 +4,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng deploy --base-href=\"./\" --no-silent",
+    "deploy": "ng deploy --base-href=https://eve-sama.github.io/meta-qingflow/ --no-silent",
     "add": "ng g @eve-sama/meta-qingflow-schema:add"
   },
   "private": true,
