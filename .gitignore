@@ -15,4 +15,5 @@ proxy.conf.json
 *.swo
 **/cdn/cdnConfig.js
 yarn.lock
+yalc.lock
 package-lock.json
