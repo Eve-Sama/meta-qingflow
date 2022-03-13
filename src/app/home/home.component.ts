@@ -10,6 +10,6 @@ export class HomeComponent implements OnInit {
   constructor(private title: Title) {}
 
   ngOnInit(): void {
-    this.title.setTitle('轻流前端新手任务');
+    this.title.setTitle('轻流前端新人成长平台');
   }
 }
