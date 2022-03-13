@@ -4,4 +4,6 @@
     <div *ngFor="let menu of menus" class="menu" (click)="click(menu.type)">{{ menu.title }}</div>
   </div>
 </div>
-<router-outlet></router-outlet>
+<div class="body-container">
+  <router-outlet></router-outlet>
+</div>

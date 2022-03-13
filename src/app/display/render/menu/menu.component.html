@@ -1,4 +1,4 @@
-<ul nz-menu nzMode="inline">
+<ul class="nz-menu-container" nz-menu nzMode="inline">
   <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menuList }"></ng-container>
   <ng-template #menuTpl let-menuList>
     <ng-container *ngFor="let menu of menuList">

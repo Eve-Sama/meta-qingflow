@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-markdown',
@@ -8,4 +8,6 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class MarkdownComponent {
   @Input() src: string;
+
+  @Output() readonly load = new EventEmitter();
 }

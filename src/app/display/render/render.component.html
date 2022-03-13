@@ -1,37 +1,28 @@
-<div class="container">
-  <div class="menu-container">
-    <app-menu></app-menu>
-  </div>
-  <div class="content">
-    <div nz-row>
-      <div nz-col [nzSpan]="24">
-        <nz-card>
-          <div class="question-container">
-            <app-markdown [src]="questionMdSrc"></app-markdown>
-            <ng-container *ngIf="showAnswer">
-              <nz-divider nzText="预期表现"></nz-divider>
-              <div class="border">
-                <ng-container #answerComponentRef></ng-container>
-              </div>
-            </ng-container>
-            <nz-divider nzText="作答区域"></nz-divider>
-            <div class="border">
-              <ng-container #questionComponentRef></ng-container>
-            </div>
-            <button
-              *ngIf="showAnalyseButton"
-              nz-button
-              nzType="dashed"
-              (click)="showAnalyseContent = !showAnalyseContent">{{showAnalyseContent ? '隐藏' : '查看'}}题解</button>
-            <ng-container *ngIf="showAnalyseContent">
-              <nz-divider nzText="题解"></nz-divider>
-              <div class="border">
-                <app-markdown [src]="analyseMdSrc"></app-markdown>
-              </div>
-            </ng-container>
-          </div>
-        </nz-card>
+<div class="menu-container">
+  <app-menu></app-menu>
+</div>
+<div class="content-container">
+  <nz-spin nzTip="Loading..." [nzSpinning]="loading">
+    <div class="question-container">
+      <app-markdown [src]="questionMdSrc" (load)="loading = false"></app-markdown>
+      <ng-container *ngIf="showAnswer">
+        <nz-divider nzText="预期表现"></nz-divider>
+        <div class="border">
+          <ng-container #answerComponentRef></ng-container>
+        </div>
+      </ng-container>
+      <nz-divider nzText="作答区域"></nz-divider>
+      <div class="border">
+        <ng-container #questionComponentRef></ng-container>
       </div>
+      <button *ngIf="showAnalyseButton" nz-button nzType="dashed"
+        (click)="showAnalyseContent = !showAnalyseContent">{{showAnalyseContent ? '隐藏' : '查看'}}题解</button>
+      <ng-container *ngIf="showAnalyseContent">
+        <nz-divider nzText="题解"></nz-divider>
+        <div class="border">
+          <app-markdown [src]="analyseMdSrc"></app-markdown>
+        </div>
+      </ng-container>
     </div>
-  </div>
+  </nz-spin>
 </div>

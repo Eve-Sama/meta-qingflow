@@ -1,23 +1,20 @@
-.container {
+:host {
   display: flex;
-  justify-content: space-around;
   background: #ececec;
-  .menu-container {
-    width: 300px;
-    background: #fff;
-  }
-  .content {
-    flex: 1;
-  }
+  height: calc(100vh - 58px);
+}
+.menu-container {
+  width: 300px;
+  background: #fff;
+}
+.content-container {
+  flex: 1;
+  padding: 0px 20px;
+  overflow-y: auto;
+  background: #fff;
 }
 .border {
   padding: 8px;
   min-height: 100px;
   border: 1px dashed #000;
-}
-
-.question-container {
-  height: calc(100vh - 110px);
-  padding-bottom: 8px;
-  overflow-y: auto;
 }

@@ -12,6 +12,7 @@ import { RenderComponent } from './render/render.component';
 import { DisplayRoutingModule } from './display-routing.module';
 import { QAAModule } from '@QAA/QAA.module';
 import { MenuComponent } from './render/menu/menu.component';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { MenuComponent } from './render/menu/menu.component';
     NzDividerModule,
     AppMarkdownModule,
     NzMenuModule,
+    NzSpinModule,
     QAAModule
   ],
   declarations: [RenderComponent, MenuComponent]

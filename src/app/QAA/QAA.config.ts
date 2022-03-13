@@ -193,8 +193,9 @@ export const MenuList: TaskMenu[] = [
     title: 'TypeScript',
     children: [
       {
-        id: null,
-        question: null,
+        id: '06',
+        question: Question06Component,
+        answer: Answer06Component,
         title: '函数参数类型与返回值',
       },
     ],

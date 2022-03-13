@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-  Type,
-  ViewChild,
-  ViewContainerRef,
-} from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MenuList } from '@QAA/QAA.config';
@@ -30,6 +22,7 @@ export class RenderComponent implements OnInit, AfterViewInit {
   questionMdSrc: string;
   analyseMdSrc: string;
   children: TaskChidlrenMenu[] = [];
+  loading = true;
 
   @ViewChild('questionComponentRef', { read: ViewContainerRef }) questionComponentRef: ViewContainerRef;
   @ViewChild('answerComponentRef', { read: ViewContainerRef }) answerComponentRef: ViewContainerRef;
@@ -71,11 +64,7 @@ export class RenderComponent implements OnInit, AfterViewInit {
     }
   }
 
-  constructor(
-    private title: Title,
-    private activatedRoute: ActivatedRoute,
-    private cdr: ChangeDetectorRef,
-  ) {}
+  constructor(private title: Title, private activatedRoute: ActivatedRoute, private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
     this.generateComponent();
@@ -84,6 +73,7 @@ export class RenderComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     MenuList.forEach(v => this.children.push(...v.children));
     this.activatedRoute.params.subscribe((params: Params) => {
+      this.loading = true;
       this.showAnalyseContent = false;
       this.id = params.index;
       this.setMarkdown();
