@@ -1,0 +1,8 @@
+<div class="container">
+  <p>父组件财产: {{ parentMoney }}</p>
+  <button type="button" (click)="giveMoeny()">赠送500给子组件</button>
+  <!-- [money]="childMoney", 是指把自身组件的childMoney传递给子组件的money属性. -->
+  <!-- (sendMoeny)="getMoeny($event)", 小括号里的内容, 是子组件定义好的事件名. -->
+  <!-- getMoney则是当这个事件触发的时候需要执行的函数, $event是语法糖, 是子字段触发事件传递的参数, 也就是emit的参数. -->
+  <answer-12-child [money]="childMoney" (sendMoeny)="getMoeny($event)"></answer-12-child>
+</div>

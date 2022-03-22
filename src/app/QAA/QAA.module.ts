@@ -18,6 +18,7 @@ import { ANSWER, QUESTION } from './QAA.config';
 import CN from './common/translate/i18n/cn';
 import EN from './common/translate/i18n/en';
 import { Answer11ChildComponent } from './answer/answer-11/answer-11-child.component';
+import { Answer12ChildComponent } from './answer/answer-12/answer-12-child.component';
 
 const ZORRO = [
   NzCardModule,
@@ -57,6 +58,6 @@ class CustomTranslateLoader implements TranslateLoader {
     }),
     ...ZORRO,
   ],
-  declarations: [...QUESTION, ...ANSWER, Answer11ChildComponent],
+  declarations: [...QUESTION, ...ANSWER, Answer11ChildComponent, Answer12ChildComponent],
 })
 export class QAAModule {}

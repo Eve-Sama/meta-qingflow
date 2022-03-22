@@ -20,6 +20,8 @@ import { Question09Component } from './question/question-09/question-09.componen
 import { Question10Component } from './question/question-10/question-10.component';
 import { Question11Component } from './question/question-11/question-11.component';
 import { Answer11Component } from './answer/answer-11/answer-11.component';
+import { Question12Component } from './question/question-12/question-12.component';
+import { Answer12Component } from './answer/answer-12/answer-12.component';
 
 export const QUESTION = [
   Question00Component,
@@ -32,6 +34,7 @@ export const QUESTION = [
   Question09Component,
   Question10Component,
   Question11Component,
+  Question12Component,
 ];
 export const ANSWER = [
   Answer00Component,
@@ -44,6 +47,7 @@ export const ANSWER = [
   Answer09Component,
   Answer10Component,
   Answer11Component,
+  Answer12Component,
 ];
 
 export const MenuList: TaskMenu[] = [
@@ -84,9 +88,11 @@ export const MenuList: TaskMenu[] = [
         analyse: false,
       },
       {
-        id: null,
-        question: null,
-        title: '父组件调用子组件方法',
+        id: '12',
+        question: Question12Component,
+        answer: Answer12Component,
+        title: '参数传递',
+        analyse: true,
       },
       {
         id: null,
