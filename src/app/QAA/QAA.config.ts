@@ -25,6 +25,7 @@ import { Answer12Component } from './answer/answer-12/answer-12.component';
 import { Question13Component } from './question/question-13/question-13.component';
 import { Answer13Component } from './answer/answer-13/answer-13.component';
 import { Question14Component } from './question/question-14/question-14.component';
+import { Question15Component } from './question/question-15/question-15.component';
 
 export const QUESTION = [
   Question00Component,
@@ -40,6 +41,7 @@ export const QUESTION = [
   Question12Component,
   Question13Component,
   Question14Component,
+  Question15Component,
 ];
 export const ANSWER = [
   Answer00Component,
@@ -114,7 +116,13 @@ export const MenuList: TaskMenu[] = [
       {
         id: '14',
         question: Question14Component,
-        title: '组件级Provider',
+        title: '父组件Provider',
+      },
+      {
+        id: '15',
+        question: Question15Component,
+        title: '子组件Provider',
+        analyse: true,
       },
     ],
   },
