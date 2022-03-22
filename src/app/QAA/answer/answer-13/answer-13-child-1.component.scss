@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 200px;
+  background: #E0EEE0;
+  .value {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

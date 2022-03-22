@@ -22,6 +22,8 @@ import { Question11Component } from './question/question-11/question-11.componen
 import { Answer11Component } from './answer/answer-11/answer-11.component';
 import { Question12Component } from './question/question-12/question-12.component';
 import { Answer12Component } from './answer/answer-12/answer-12.component';
+import { Question13Component } from './question/question-13/question-13.component';
+import { Answer13Component } from './answer/answer-13/answer-13.component';
 
 export const QUESTION = [
   Question00Component,
@@ -35,6 +37,7 @@ export const QUESTION = [
   Question10Component,
   Question11Component,
   Question12Component,
+  Question13Component,
 ];
 export const ANSWER = [
   Answer00Component,
@@ -48,11 +51,12 @@ export const ANSWER = [
   Answer10Component,
   Answer11Component,
   Answer12Component,
+  Answer13Component,
 ];
 
 export const MenuList: TaskMenu[] = [
   {
-    title: '事件',
+    title: '内置指令',
     children: [
       {
         id: '00',
@@ -93,11 +97,6 @@ export const MenuList: TaskMenu[] = [
         answer: Answer12Component,
         title: '参数传递',
         analyse: true,
-      },
-      {
-        id: null,
-        question: null,
-        title: '子组件通知父组件',
       },
     ],
   },
@@ -152,9 +151,11 @@ export const MenuList: TaskMenu[] = [
     title: 'Service',
     children: [
       {
-        id: null,
-        question: null,
+        id: '13',
+        question: Question13Component,
+        answer: Answer13Component,
         title: '模块级Provider',
+        analyse: true,
       },
       {
         id: null,

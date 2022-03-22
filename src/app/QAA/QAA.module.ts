@@ -19,6 +19,11 @@ import CN from './common/translate/i18n/cn';
 import EN from './common/translate/i18n/en';
 import { Answer11ChildComponent } from './answer/answer-11/answer-11-child.component';
 import { Answer12ChildComponent } from './answer/answer-12/answer-12-child.component';
+import { Answer13Child1Component } from './answer/answer-13/answer-13-child-1.component';
+import { Answer13Service } from './answer/answer-13/answer-13.service';
+import { Answer13Child2Component } from './answer/answer-13/answer-13-child-2.component';
+import { Question13Child1Component } from './question/question-13/question-13-child-1.component';
+import { Question13Child2Component } from './question/question-13/question-13-child-2.component';
 
 const ZORRO = [
   NzCardModule,
@@ -58,6 +63,16 @@ class CustomTranslateLoader implements TranslateLoader {
     }),
     ...ZORRO,
   ],
-  declarations: [...QUESTION, ...ANSWER, Answer11ChildComponent, Answer12ChildComponent],
+  declarations: [
+    ...QUESTION,
+    ...ANSWER,
+    Answer11ChildComponent,
+    Answer12ChildComponent,
+    Answer13Child1Component,
+    Answer13Child2Component,
+    Question13Child1Component,
+    Question13Child2Component,
+  ],
+  providers: [Answer13Service],
 })
 export class QAAModule {}

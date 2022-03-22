@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 500px;
+  background: #FF8C69;
+  .children {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
