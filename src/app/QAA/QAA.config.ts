@@ -18,6 +18,8 @@ import { Question06Component } from './question/question-06/question-06.componen
 import { Question08Component } from './question/question-08/question-08.component';
 import { Question09Component } from './question/question-09/question-09.component';
 import { Question10Component } from './question/question-10/question-10.component';
+import { Question11Component } from './question/question-11/question-11.component';
+import { Answer11Component } from './answer/answer-11/answer-11.component';
 
 export const QUESTION = [
   Question00Component,
@@ -29,6 +31,7 @@ export const QUESTION = [
   Question06Component,
   Question09Component,
   Question10Component,
+  Question11Component,
 ];
 export const ANSWER = [
   Answer00Component,
@@ -40,6 +43,7 @@ export const ANSWER = [
   Answer08Component,
   Answer09Component,
   Answer10Component,
+  Answer11Component,
 ];
 
 export const MenuList: TaskMenu[] = [
@@ -67,23 +71,27 @@ export const MenuList: TaskMenu[] = [
         title: 'ngFor',
         analyse: true,
       },
+    ],
+  },
+  {
+    title: '父子组件',
+    children: [
       {
-        id: null,
-        question: null,
-        title: 'click',
-        analyse: true,
+        id: '11',
+        question: Question11Component,
+        answer: Answer11Component,
+        title: '创建子组件',
+        analyse: false,
       },
       {
         id: null,
         question: null,
-        title: 'mouseenter',
-        analyse: true,
+        title: '父组件调用子组件方法',
       },
       {
         id: null,
         question: null,
-        title: 'mouseleave',
-        analyse: true,
+        title: '子组件通知父组件',
       },
     ],
   },
@@ -146,26 +154,6 @@ export const MenuList: TaskMenu[] = [
         id: null,
         question: null,
         title: '组件级Provider',
-      },
-    ],
-  },
-  {
-    title: '父子组件',
-    children: [
-      {
-        id: null,
-        question: null,
-        title: '父组件调用子组件标签',
-      },
-      {
-        id: null,
-        question: null,
-        title: '父组件调用子组件方法',
-      },
-      {
-        id: null,
-        question: null,
-        title: '子组件通知父组件',
       },
     ],
   },

@@ -17,6 +17,7 @@ import { Observable, of } from 'rxjs';
 import { ANSWER, QUESTION } from './QAA.config';
 import CN from './common/translate/i18n/cn';
 import EN from './common/translate/i18n/en';
+import { Answer11ChildComponent } from './answer/answer-11/answer-11-child.component';
 
 const ZORRO = [
   NzCardModule,
@@ -33,7 +34,6 @@ const ZORRO = [
 ];
 
 class CustomTranslateLoader implements TranslateLoader {
-  // tslint:disable-next-line:no-any
   getTranslation(lang: string): Observable<any> {
     if (lang === 'cn') {
       return of(CN);
@@ -57,6 +57,6 @@ class CustomTranslateLoader implements TranslateLoader {
     }),
     ...ZORRO,
   ],
-  declarations: [...QUESTION, ...ANSWER],
+  declarations: [...QUESTION, ...ANSWER, Answer11ChildComponent],
 })
 export class QAAModule {}
