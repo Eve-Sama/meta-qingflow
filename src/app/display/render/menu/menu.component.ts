@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuList } from '@QAA/QAA.config';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -9,9 +9,12 @@ interface DisplayMenuBasic {
   level: number;
 }
 
-interface DisplayChildrenMenu extends TaskChidlrenMenu, DisplayMenuBasic {}
+interface DisplayChildrenMenu extends TaskChidlrenMenu, DisplayMenuBasic {
+  selected: boolean;
+}
 
 interface DisplayMenu extends TaskMenu, DisplayMenuBasic {
+  open: boolean;
   children: DisplayChildrenMenu[];
 }
 
@@ -20,7 +23,7 @@ interface DisplayMenu extends TaskMenu, DisplayMenuBasic {
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent implements OnInit, AfterViewInit {
+export class MenuComponent implements OnInit {
   private _MenuList = MenuList;
 
   menuList: DisplayMenu[];
@@ -40,15 +43,28 @@ export class MenuComponent implements OnInit, AfterViewInit {
         return {
           ...child,
           level: 2,
+          selected: false,
         };
       });
       return {
         ...v,
         level: 1,
+        open: false,
         children,
       };
     });
     return newMenuList;
+  }
+
+  /** 根据 url 自动选中、展开对应的菜单 */
+  private updateMenuStatus(): void {
+    const id = this.activatedRoute.snapshot.params.id;
+    this.menuList.forEach(parentMenu => {
+      parentMenu.children.forEach(childMenu => {
+        childMenu.selected = childMenu.id === id;
+      });
+      parentMenu.open = parentMenu.children.some(v => v.selected);
+    });
   }
 
   constructor(
@@ -57,9 +73,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
     private nzMessageService: NzMessageService
   ) {}
 
-  ngAfterViewInit(): void {}
-
   ngOnInit(): void {
     this.menuList = this._initMenu(this._MenuList);
+    this.updateMenuStatus();
   }
 }

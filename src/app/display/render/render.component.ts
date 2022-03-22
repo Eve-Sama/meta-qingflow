@@ -1,5 +1,4 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MenuList } from '@QAA/QAA.config';
 import { TaskChidlrenMenu } from 'src/app/utils/interface/task.interface';
@@ -43,7 +42,6 @@ export class RenderComponent implements OnInit, AfterViewInit {
       this.generateQuestionComponent(question);
       this.generateAnswerComponent(answer);
     });
-    this.title.setTitle(title);
   }
 
   private generateQuestionComponent(component: Type<unknown>): void {
@@ -64,7 +62,7 @@ export class RenderComponent implements OnInit, AfterViewInit {
     }
   }
 
-  constructor(private title: Title, private activatedRoute: ActivatedRoute, private cdr: ChangeDetectorRef) {}
+  constructor(private activatedRoute: ActivatedRoute, private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
     this.generateComponent();
@@ -75,7 +73,7 @@ export class RenderComponent implements OnInit, AfterViewInit {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.loading = true;
       this.showAnalyseContent = false;
-      this.id = params.index;
+      this.id = params.id;
       this.setMarkdown();
       this.generateComponent();
     });

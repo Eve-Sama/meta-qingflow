@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +6,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private title: Title) {}
 
   ngOnInit(): void {
-    this.title.setTitle('轻流前端新人成长平台');
   }
 }
