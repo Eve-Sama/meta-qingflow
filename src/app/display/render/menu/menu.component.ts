@@ -31,14 +31,15 @@ export class MenuComponent implements OnInit {
   changePage(id: string): void {
     if (!id) {
       this.nzMessageService.error('这题还没造呢!');
+      this._updateMenuStatus();
       return;
     }
     this.router.navigate([`../${id}`], { relativeTo: this.activatedRoute });
   }
 
   /** 会对菜单数据手动赋值一些侧边栏才用的到的字段信息 */
-  private _initMenu(menuList: TaskMenu[]): DisplayMenu[] {
-    const newMenuList = menuList.map(v => {
+  private _initMenu(): DisplayMenu[] {
+    const newMenuList = this._MenuList.map(v => {
       const children = v.children.map(child => {
         return {
           ...child,
@@ -57,7 +58,7 @@ export class MenuComponent implements OnInit {
   }
 
   /** 根据 url 自动选中、展开对应的菜单 */
-  private updateMenuStatus(): void {
+  private _updateMenuStatus(): void {
     const id = this.activatedRoute.snapshot.params.id;
     this.menuList.forEach(parentMenu => {
       parentMenu.children.forEach(childMenu => {
@@ -74,7 +75,7 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.menuList = this._initMenu(this._MenuList);
-    this.updateMenuStatus();
+    this.menuList = this._initMenu();
+    this._updateMenuStatus();
   }
 }

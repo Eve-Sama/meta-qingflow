@@ -26,6 +26,8 @@ import { Question13Component } from './question/question-13/question-13.componen
 import { Answer13Component } from './answer/answer-13/answer-13.component';
 import { Question14Component } from './question/question-14/question-14.component';
 import { Question15Component } from './question/question-15/question-15.component';
+import { Question16Component } from './question/question-16/question-16.component';
+import { Answer16Component } from './answer/answer-16/answer-16.component';
 
 export const QUESTION = [
   Question00Component,
@@ -42,6 +44,7 @@ export const QUESTION = [
   Question13Component,
   Question14Component,
   Question15Component,
+  Question16Component,
 ];
 export const ANSWER = [
   Answer00Component,
@@ -56,6 +59,7 @@ export const ANSWER = [
   Answer11Component,
   Answer12Component,
   Answer13Component,
+  Answer16Component,
 ];
 
 export const MenuList: TaskMenu[] = [
@@ -82,6 +86,21 @@ export const MenuList: TaskMenu[] = [
         answer: Answer09Component,
         title: 'ngFor',
         analyse: true,
+      },
+      {
+        id: null,
+        question: null,
+        title: 'ngClass',
+      },
+      {
+        id: null,
+        question: null,
+        title: 'ngStyle',
+      },
+      {
+        id: null,
+        question: null,
+        title: 'ng-container',
       },
     ],
   },
@@ -156,8 +175,9 @@ export const MenuList: TaskMenu[] = [
     title: '生命周期',
     children: [
       {
-        id: null,
-        question: null,
+        id: '16',
+        question: Question16Component,
+        answer: Answer16Component,
         title: 'ngOnInit',
       },
       {
@@ -185,6 +205,21 @@ export const MenuList: TaskMenu[] = [
         question: Question04Component,
         title: 'Zorro',
         analyse: true,
+      },
+      {
+        id: null,
+        question: null,
+        title: '路由守卫',
+      },
+      {
+        id: null,
+        question: null,
+        title: 'CDK',
+      },
+      {
+        id: null,
+        question: null,
+        title: 'RXJS',
       },
     ],
   },
