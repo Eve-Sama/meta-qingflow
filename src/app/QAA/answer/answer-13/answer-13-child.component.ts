@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Answer13Service } from './answer-13.service';
 
 @Component({
-  selector: 'answer-13-child-1',
-  templateUrl: './answer-13-child-1.component.html',
-  styleUrls: ['./answer-13-child-1.component.scss'],
+  selector: 'answer-13-child',
+  templateUrl: './answer-13-child.component.html',
+  styleUrls: ['./answer-13-child.component.scss'],
 })
-export class Answer13Child1Component {
+export class Answer13ChildComponent {
+  @Input() index: number;
+
   get num(): number {
     return this.answer13Service.num;
   }
