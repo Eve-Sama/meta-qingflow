@@ -10,7 +10,6 @@ import { TranslateComponent } from '@QAA/common/translate/translate.component';
 export class Question02Component extends TranslateComponent {
   openModal(): void {
     this.nzModalService.create({
-      nzTitle: '前端',
       nzContent: 'Welcome to join qingflow!',
       nzFooter: null
     });
