@@ -101,6 +101,23 @@ export const MenuList: TaskMenu[] = [
     ],
   },
   {
+    title: 'Service',
+    children: [
+      {
+        id: '13',
+        question: Question13Component,
+        answer: Answer13Component,
+        title: '模块级Provider',
+        analyse: true,
+      },
+      {
+        id: null,
+        question: null,
+        title: '组件级Provider',
+      },
+    ],
+  },
+  {
     title: '翻译',
     children: [
       {
@@ -127,44 +144,6 @@ export const MenuList: TaskMenu[] = [
     ],
   },
   {
-    title: 'Zorro',
-    children: [
-      {
-        id: '04',
-        question: Question04Component,
-        title: '初识Zorro',
-        analyse: true,
-      },
-    ],
-  },
-  {
-    title: 'Git',
-    children: [
-      {
-        id: '05',
-        question: Question05Component,
-        title: 'Git基操',
-      },
-    ],
-  },
-  {
-    title: 'Service',
-    children: [
-      {
-        id: '13',
-        question: Question13Component,
-        answer: Answer13Component,
-        title: '模块级Provider',
-        analyse: true,
-      },
-      {
-        id: null,
-        question: null,
-        title: '组件级Provider',
-      },
-    ],
-  },
-  {
     title: '生命周期',
     children: [
       {
@@ -181,6 +160,22 @@ export const MenuList: TaskMenu[] = [
         id: null,
         question: null,
         title: 'ngOnChanges',
+      },
+    ],
+  },
+  {
+    title: '综合',
+    children: [
+      {
+        id: '05',
+        question: Question05Component,
+        title: 'Git',
+      },
+      {
+        id: '04',
+        question: Question04Component,
+        title: 'Zorro',
+        analyse: true,
       },
     ],
   },
