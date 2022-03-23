@@ -8,6 +8,12 @@ import { Answer06Component } from './answer/answer-06/answer-06.component';
 import { Answer08Component } from './answer/answer-08/answer-08.component';
 import { Answer09Component } from './answer/answer-09/answer-09.component';
 import { Answer10Component } from './answer/answer-10/answer-10.component';
+import { Answer11Component } from './answer/answer-11/answer-11.component';
+import { Answer12Component } from './answer/answer-12/answer-12.component';
+import { Answer13Component } from './answer/answer-13/answer-13.component';
+import { Answer16Component } from './answer/answer-16/answer-16.component';
+import { Answer17Component } from './answer/answer-17/answer-17.component';
+
 import { Question00Component } from './question/question-00/question-00.component';
 import { Question01Component } from './question/question-01/question-01.component';
 import { Question02Component } from './question/question-02/question-02.component';
@@ -19,17 +25,12 @@ import { Question08Component } from './question/question-08/question-08.componen
 import { Question09Component } from './question/question-09/question-09.component';
 import { Question10Component } from './question/question-10/question-10.component';
 import { Question11Component } from './question/question-11/question-11.component';
-import { Answer11Component } from './answer/answer-11/answer-11.component';
 import { Question12Component } from './question/question-12/question-12.component';
-import { Answer12Component } from './answer/answer-12/answer-12.component';
 import { Question13Component } from './question/question-13/question-13.component';
-import { Answer13Component } from './answer/answer-13/answer-13.component';
 import { Question14Component } from './question/question-14/question-14.component';
 import { Question15Component } from './question/question-15/question-15.component';
 import { Question16Component } from './question/question-16/question-16.component';
-import { Answer16Component } from './answer/answer-16/answer-16.component';
 import { Question17Component } from './question/question-17/question-17.component';
-import { Answer17Component } from './answer/answer-17/answer-17.component';
 
 export const QUESTION = [
   Question00Component,
@@ -49,6 +50,7 @@ export const QUESTION = [
   Question16Component,
   Question17Component,
 ];
+
 export const ANSWER = [
   Answer00Component,
   Answer01Component,
