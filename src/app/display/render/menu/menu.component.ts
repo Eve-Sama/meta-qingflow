@@ -31,7 +31,6 @@ export class MenuComponent implements OnInit {
   changePage(id: string): void {
     if (!id) {
       this.nzMessageService.error('这题还没造呢!');
-      this._updateMenuStatus();
       return;
     }
     this.router.navigate([`../${id}`], { relativeTo: this.activatedRoute });

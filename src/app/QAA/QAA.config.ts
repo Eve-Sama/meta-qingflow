@@ -28,6 +28,8 @@ import { Question14Component } from './question/question-14/question-14.componen
 import { Question15Component } from './question/question-15/question-15.component';
 import { Question16Component } from './question/question-16/question-16.component';
 import { Answer16Component } from './answer/answer-16/answer-16.component';
+import { Question17Component } from './question/question-17/question-17.component';
+import { Answer17Component } from './answer/answer-17/answer-17.component';
 
 export const QUESTION = [
   Question00Component,
@@ -45,6 +47,7 @@ export const QUESTION = [
   Question14Component,
   Question15Component,
   Question16Component,
+  Question17Component,
 ];
 export const ANSWER = [
   Answer00Component,
@@ -60,6 +63,7 @@ export const ANSWER = [
   Answer12Component,
   Answer13Component,
   Answer16Component,
+  Answer17Component,
 ];
 
 export const MenuList: TaskMenu[] = [
@@ -88,8 +92,9 @@ export const MenuList: TaskMenu[] = [
         analyse: true,
       },
       {
-        id: null,
-        question: null,
+        id: '17',
+        question: Question17Component,
+        answer: Answer17Component,
         title: 'ngClass',
       },
       {
