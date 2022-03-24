@@ -38,11 +38,7 @@ npm start
 
 ## 新增题目
 
-如果你想要对本项目的题库进行修改, 你并不需要太详细地了解本项目的架构. 我已经为你编写好了`Schematics`用于快速创建题目. 因为每个题目都有序号, 因此我们需要找到最新任务序号, 以保证我们新创建的题目序号是唯一的. 在本项目业务中, 一个任务, 他可能没有答案, 可能没有题解, 但他一定有描述部分. 因此你可以通过查看描述文件来判断最新序号. 任务描述文件的存放路径是`src/assets/md/describe`
-
-![][描述]
-
-以此刻的任务列表为例, 我们需要新增第`11`号任务. 我们在任务栏执行脚本即可.
+如果你想要对本项目的题库进行修改, 你完全不需要了解本项目的架构, **注意, 是完全一丁点都不需要**. 我已经为你编写好了`Schematics`用于快速创建题目. 你只需要执行以下命令即可
 ```bash
 npm run add
 ```
@@ -50,23 +46,19 @@ npm run add
 接下来你只需要根据问答情况输入即可. 之后, Schematics会自动对项目做出代码修改. 
 ![][npm run add]
 
-但是, 因为本人水平有限, 暂时只能实现自动新增文件和引入组件. 剩余还有些工作需要你们手动完成. 搜索
-`QAA.config.ts`文件, 做出以下修改.
-
+需要你重点关注一下`QAA.config.ts`这个文件, 打开这个文件, 你会发现它已经做出了许多的代码变更, 你需要注意和菜单有关的变更. 默认会为你添加到第一个一级菜单当中, 你可以手动将新增内容拷贝至合适的菜单项.
 ```diff
-export const QUESTION = [
-  Question00Component,
-+ Question11Component,
-];
-export const ANSWER = [
-  Answer00Component,
-+ Answer11Component,
-];
-
 export const MenuList: TaskMenu[] = [
   {
     title: '一级菜单',
     children: [
++     {
++       id: '19',
++       question: Question19Component,
++       answer: Answer19Component,
++       title: '未命名',
++       analyse: true,
++     },
       {
         id: '00',
         question: Question00Component,
@@ -74,44 +66,35 @@ export const MenuList: TaskMenu[] = [
         title: 'ngIf',
         analyse: true,
       },
-      {
-+       id: '11',
-+       question: Question11Component,
-        // 如果没有答案, 不设置answer即可
-+       answer: Answer11Component,
-+       title: '二级菜单名',
-        // 如果没有题解, 不设置analyse即可
-+       analyse: true,
-      },
     ],
   },
 ];
 ```
 
-新的一道题目就完成了基本的设置, 并且渲染在了网页上了. 
+此刻, 新的一道题目就已经全自然设置好了, 并且渲染在了网页上了.
 
-![][添加11号题的demo]
+![][添加demo]
 
 接下来你只需要完善题目即可.
 
- - 想要完善11号任务的描述? 搜索`describe/11.md`
- - 想要完善11号任务的题解? 搜索`analyse/11.md`
- - 想要完善11号任务的预期表现? 搜索`answer-11.component`
- - 想要完善11号任务的答题区域? 搜索`question-11.component`
+ - 想要完善18号任务的描述? 搜索`describe/18.md`
+ - 想要完善18号任务的题解? 搜索`analyse/18.md`
+ - 想要完善18号任务的预期表现? 搜索`answer-18.component`
+ - 想要完善18号任务的答题区域? 搜索`question-18.component`
 
 ## The future
 
 因为平时比较忙(比如打英雄联盟、和平精英、QQ飞车等), 不一定有时间开发. 现阶段先只是确保基本题库的正常使用, 更多功能还在开发中. 
 
-- [x] 使用Angular Schematics自动新增知识点
+- [x] 使用Angular Schematics全自动化自动新增任务
 - [ ] 完成所有任务的出题
 - [ ] 将知识点再次分层, 分为初级、进阶、高级等多个不同level
 - [ ] 文章推荐: 可以推荐各个不同层次的文章, 但是肯定不是简单列出来, 需要思考如何与项目更好地结合
 - [ ] 水平测验: 能够通过平台实现答题功能, 新人可以通过答题来检验是否知识点是否掌握牢固
-- [ ] 能够接入codesandbox等平台, 实现在线coding
+- [ ] 能够接入codesandbox等平台, 实现在线coding(可能意义不大, 还在考虑)
 
 [首页]:https://file.qingflow.com/uploads/file/b49395ce-d31e-42a8-bccc-6f0b774fb106.png
 [做题]:https://file.qingflow.com/uploads/file/8373b7e6-4221-48b8-81f3-a4c24e0f4406.png
 [描述]:https://file.qingflow.com/uploads/file/d4f5138b-7fae-4dc5-a782-84499bdd34da.png
-[npm run add]:https://file.qingflow.com/uploads/file/51cf7aff-3b31-4651-bc07-697d61dd974d.png
-[添加11号题的demo]:https://file.qingflow.com/uploads/file/9a698333-72e2-4537-a1e3-13295dea4a5b.png
+[npm run add]:https://file.qingflow.com/uploads/file/35d7cb7d-fd8b-406f-ac98-c162da237f3b.png
+[添加demo]:https://file.qingflow.com/uploads/file/308df60d-1b08-4cb2-976d-23212495409e.png
