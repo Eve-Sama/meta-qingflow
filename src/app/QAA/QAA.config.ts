@@ -15,6 +15,7 @@ import { Answer16Component } from './answer/answer-16/answer-16.component';
 import { Answer17Component } from './answer/answer-17/answer-17.component';
 import { Answer18Component } from './answer/answer-18/answer-18.component';
 import { Answer19Component } from './answer/answer-19/answer-19.component';
+import { Answer20Component } from './answer/answer-20/answer-20.component';
 
 import { Question00Component } from './question/question-00/question-00.component';
 import { Question01Component } from './question/question-01/question-01.component';
@@ -35,6 +36,7 @@ import { Question16Component } from './question/question-16/question-16.componen
 import { Question17Component } from './question/question-17/question-17.component';
 import { Question18Component } from './question/question-18/question-18.component';
 import { Question19Component } from './question/question-19/question-19.component';
+import { Question20Component } from './question/question-20/question-20.component';
 
 export const QUESTION = [
   Question00Component,
@@ -55,6 +57,7 @@ export const QUESTION = [
   Question17Component,
   Question18Component,
   Question19Component,
+  Question20Component,
 ];
 
 export const ANSWER = [
@@ -74,6 +77,7 @@ export const ANSWER = [
   Answer17Component,
   Answer18Component,
   Answer19Component,
+  Answer20Component,
 ];
 
 export const MenuList: TaskMenu[] = [
@@ -106,16 +110,6 @@ export const MenuList: TaskMenu[] = [
         question: Question17Component,
         answer: Answer17Component,
         title: 'ngClass',
-      },
-      {
-        id: null,
-        question: null,
-        title: 'ngStyle',
-      },
-      {
-        id: null,
-        question: null,
-        title: 'ng-container',
       },
     ],
   },
@@ -196,16 +190,11 @@ export const MenuList: TaskMenu[] = [
         title: 'ngOnInit',
       },
       {
-      	id: '18',
-      	question: Question18Component,
-      	answer: Answer18Component,
+        id: '18',
+        question: Question18Component,
+        answer: Answer18Component,
         title: 'ngOnChanges',
-      	analyse: true,
-      },
-      {
-        id: null,
-        question: null,
-        title: 'ngOnDestroy(和rxjs一起讲)',
+        analyse: true,
       },
     ],
   },
@@ -224,16 +213,23 @@ export const MenuList: TaskMenu[] = [
         analyse: true,
       },
       {
-      	id: '19',
-      	question: Question19Component,
-      	answer: Answer19Component,
-      	title: 'CDK',
+        id: '19',
+        question: Question19Component,
+        answer: Answer19Component,
+        title: 'CDK',
         analyse: true,
       },
+    ],
+  },
+  {
+    title: 'RxJS',
+    children: [
       {
-        id: null,
-        question: null,
-        title: 'RXJS',
+        id: '20',
+        question: Question20Component,
+        answer: Answer20Component,
+        title: 'Subject',
+        analyse: true,
       },
     ],
   },
