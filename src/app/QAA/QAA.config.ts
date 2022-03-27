@@ -13,6 +13,7 @@ import { Answer12Component } from './answer/answer-12/answer-12.component';
 import { Answer13Component } from './answer/answer-13/answer-13.component';
 import { Answer16Component } from './answer/answer-16/answer-16.component';
 import { Answer17Component } from './answer/answer-17/answer-17.component';
+import { Answer18Component } from './answer/answer-18/answer-18.component';
 
 import { Question00Component } from './question/question-00/question-00.component';
 import { Question01Component } from './question/question-01/question-01.component';
@@ -31,6 +32,7 @@ import { Question14Component } from './question/question-14/question-14.componen
 import { Question15Component } from './question/question-15/question-15.component';
 import { Question16Component } from './question/question-16/question-16.component';
 import { Question17Component } from './question/question-17/question-17.component';
+import { Question18Component } from './question/question-18/question-18.component';
 
 export const QUESTION = [
   Question00Component,
@@ -49,6 +51,7 @@ export const QUESTION = [
   Question15Component,
   Question16Component,
   Question17Component,
+  Question18Component,
 ];
 
 export const ANSWER = [
@@ -66,6 +69,7 @@ export const ANSWER = [
   Answer13Component,
   Answer16Component,
   Answer17Component,
+  Answer18Component,
 ];
 
 export const MenuList: TaskMenu[] = [
@@ -188,14 +192,16 @@ export const MenuList: TaskMenu[] = [
         title: 'ngOnInit',
       },
       {
-        id: null,
-        question: null,
-        title: 'ngOnDestroy',
+      	id: '18',
+      	question: Question18Component,
+      	answer: Answer18Component,
+        title: 'ngOnChanges',
+      	analyse: true,
       },
       {
         id: null,
         question: null,
-        title: 'ngOnChanges',
+        title: 'ngOnDestroy(和rxjs一起讲)',
       },
     ],
   },

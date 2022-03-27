@@ -24,6 +24,8 @@ import { Answer13ChildComponent } from './answer/answer-13/answer-13-child.compo
 import { Question13ChildComponent } from './question/question-13/question-13-child.component';
 import { Question14ChildComponent } from './question/question-14/question-14-child.component';
 import { Question15ChildComponent } from './question/question-15/question-15-child.component';
+import { Answer18ChildComponent } from './answer/answer-18/answer-18-child.component';
+import { Question18ChildComponent } from './question/question-18/question-18-child.component';
 
 const ZORRO = [
   NzCardModule,
@@ -72,6 +74,8 @@ class CustomTranslateLoader implements TranslateLoader {
     Question13ChildComponent,
     Question14ChildComponent,
     Question15ChildComponent,
+    Answer18ChildComponent,
+    Question18ChildComponent,
   ],
   providers: [Answer13Service],
 })
