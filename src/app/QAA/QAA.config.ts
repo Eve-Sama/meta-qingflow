@@ -46,6 +46,7 @@ export const QUESTION = [
   Question04Component,
   Question05Component,
   Question06Component,
+  Question08Component,
   Question09Component,
   Question10Component,
   Question11Component,
